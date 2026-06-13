@@ -314,11 +314,14 @@
       border-radius: 24px;
       background: white;
       border: 1px solid rgba(124,58,237,0.14);
+      display: block;
     }
 
+    .main-audio,
     audio {
       width: 100%;
       display: block;
+      min-height: 48px;
     }
 
     .tab-grid {
@@ -678,9 +681,9 @@
             </p>
 
             <div class="audio-card">
-              <audio controls preload="metadata">
-                <source src="./E.m4a" type="audio/mp4">
+              <audio class="main-audio" controls preload="auto">
                 <source src="E.m4a" type="audio/mp4">
+                <source src="E.m4a" type="audio/x-m4a">
                 Your browser does not support the audio element.
               </audio>
             </div>
@@ -1011,8 +1014,8 @@
                 <label class="option"><input type="radio" name="gq1" value="e"> E. was drinking</label>
               </div>
               <div class="explanation">
-                <span data-lang="kk"><b>C</b> дұрыс. Usually сөзі әдеттегі әрекетті көрсетеді, сондықтан Present Simple қолданылады: I usually drink.</span>
-                <span data-lang="ru"><b>C</b> правильно. Usually показывает обычное действие, поэтому нужен Present Simple: I usually drink.</span>
+                <span data-lang="kk"><b>C</b> дұрыс. Usually сөзі әдеттегі әрекетті көрсетеді, сондықтан Present Simple қолданылады.</span>
+                <span data-lang="ru"><b>C</b> правильно. Usually показывает обычное действие, поэтому нужен Present Simple.</span>
               </div>
             </div>
 
@@ -1071,8 +1074,8 @@
                 <label class="option"><input type="radio" name="gq5" value="e"> E. at</label>
               </div>
               <div class="explanation">
-                <span data-lang="kk"><b>D</b> дұрыс. Дұрыс тіркес: different from — бір нәрседен өзгеше болу.</span>
-                <span data-lang="ru"><b>D</b> правильно. Правильное сочетание: different from — отличаться от чего-либо.</span>
+                <span data-lang="kk"><b>D</b> дұрыс. Дұрыс тіркес: different from.</span>
+                <span data-lang="ru"><b>D</b> правильно. Правильное сочетание: different from.</span>
               </div>
             </div>
 
@@ -1131,8 +1134,8 @@
                 <label class="option"><input type="radio" name="gq9" value="e"> E. were</label>
               </div>
               <div class="explanation">
-                <span data-lang="kk"><b>A</b> дұрыс. Reported speech кезінде am → was болып өзгереді: He said that he was tired.</span>
-                <span data-lang="ru"><b>A</b> правильно. В reported speech am меняется на was: He said that he was tired.</span>
+                <span data-lang="kk"><b>A</b> дұрыс. Reported speech кезінде am → was болып өзгереді.</span>
+                <span data-lang="ru"><b>A</b> правильно. В reported speech am меняется на was.</span>
               </div>
             </div>
 
@@ -1161,8 +1164,8 @@
                 <label class="option"><input type="radio" name="gq11" value="e"> E. studies</label>
               </div>
               <div class="explanation">
-                <span data-lang="kk"><b>D</b> дұрыс. Interested in тіркесінен кейін gerund қолданылады: interested in studying.</span>
-                <span data-lang="ru"><b>D</b> правильно. После interested in используется gerund: interested in studying.</span>
+                <span data-lang="kk"><b>D</b> дұрыс. Interested in тіркесінен кейін gerund қолданылады: studying.</span>
+                <span data-lang="ru"><b>D</b> правильно. После interested in используется gerund: studying.</span>
               </div>
             </div>
 
@@ -1243,27 +1246,55 @@
           <div class="card">
             <div class="kicker">Part 3 · Reading</div>
 
-            <h2 class="section-title">
-              <span data-lang="kk">Reading Preview</span>
-              <span data-lang="ru">Reading Preview</span>
-            </h2>
+            <h2 class="section-title">The University of Life</h2>
 
             <p class="subtitle">
-              <span data-lang="kk">
-                Бұл бөлімге нақты Reading мәтінін сенің дайын Reading сайтыңнан қою керек.
-                Қазір structure дайын: мәтін жоғарыда, 8 сұрақ төменде тұрады.
-              </span>
-              <span data-lang="ru">
-                В этот раздел нужно поставить настоящий Reading text из твоего готового Reading-сайта.
-                Сейчас structure готова: текст сверху, 8 вопросов снизу.
-              </span>
+              <span data-lang="kk">Мәтінді оқып, төмендегі 8 сұраққа жауап беріңіз.</span>
+              <span data-lang="ru">Прочитайте текст и ответьте на 8 вопросов ниже.</span>
             </p>
 
             <div class="text-box" style="margin-top:18px;">
-              <p><b>Reading text placeholder.</b></p>
               <p>
-                Мұнда сенің дайын курсыңнан алынған бір нақты reading passage тұрады.
-                Мен оны өзім ойдан жазбаймын. Сен жіберген немесе дайын сайттан алынған мәтін ғана қойылады.
+                The majority of eighteen-year-old students entering higher education go straight
+                from school to university. For many school leavers, however, there is the irresistible
+                attraction of the “gap year”, a time between school and university when they decide
+                to experience something new, different or exciting.
+              </p>
+
+              <p>
+                Many of these so-called “gappers” go travelling around the world, often supplementing
+                their limited funds by taking on casual work. Others may do voluntary work in a village
+                in a distant part of the world. For the majority of gappers, the gap year is simply a
+                chance to enjoy life as an independent adult for the first time.
+              </p>
+
+              <p>
+                Increasingly, however, gap years are also proving a useful way of renewing a lapsed or
+                weakening interest in education. They offer young people a chance to think about why
+                they should study, or whether they need to study at all. A growing number of students,
+                having taken a break after school, are heading back into further and higher education
+                through a less direct route of working and gapping.
+              </p>
+
+              <p>
+                According to recent data from the British university admissions service, UCAS, 105,000
+                students aged nineteen and 44,400 students aged twenty entered higher education last year.
+                These figures show a steady annual increase in this age group over the previous three years.
+              </p>
+
+              <p>
+                Nineteen-year-old student Christine Samways is a typical example. She left school at sixteen
+                with nine good exam passes at grades A to C, but she did not want to continue studying at
+                the time. She was also worried that, despite having the qualities of a good student, she would
+                find the challenges of higher education too great and would be forced to drop out.
+              </p>
+
+              <p>
+                Instead, Christine gained a vocational qualification in hairdressing. However, she quickly began
+                to realise that it was not quite what she wanted and that going back into some kind of education
+                could be her next step. Like many sixteen-year-old school leavers starting work for the first time,
+                she understood that without qualifications, or without the right qualifications, people have fewer
+                work choices.
               </p>
             </div>
           </div>
@@ -1271,18 +1302,123 @@
           <div class="card" data-test="reading">
             <h3 class="card-title">Reading · Questions</h3>
 
-            <div class="question" data-answer="a">
-              <p>1. Reading question placeholder</p>
+            <div class="question" data-answer="c">
+              <p>1. What is the main idea of the passage?</p>
               <div class="options">
-                <label class="option"><input type="radio" name="rq1" value="a"> A. Correct option placeholder</label>
-                <label class="option"><input type="radio" name="rq1" value="b"> B. Option placeholder</label>
-                <label class="option"><input type="radio" name="rq1" value="c"> C. Option placeholder</label>
-                <label class="option"><input type="radio" name="rq1" value="d"> D. Option placeholder</label>
-                <label class="option"><input type="radio" name="rq1" value="e"> E. Option placeholder</label>
+                <label class="option"><input type="radio" name="rq1" value="a"> A. All students should avoid university after school</label>
+                <label class="option"><input type="radio" name="rq1" value="b"> B. Travelling is more useful than any kind of education</label>
+                <label class="option"><input type="radio" name="rq1" value="c"> C. A gap year can help some students return to education with clearer purpose</label>
+                <label class="option"><input type="radio" name="rq1" value="d"> D. Higher education is becoming less popular among young people</label>
+                <label class="option"><input type="radio" name="rq1" value="e"> E. Vocational qualifications always replace university degrees</label>
               </div>
               <div class="explanation">
-                <span data-lang="kk">Мұнда нақты reading explanation қойылады.</span>
-                <span data-lang="ru">Здесь будет настоящее explanation для reading.</span>
+                <span data-lang="kk"><b>C</b> дұрыс. Main idea — gap year кейбір students-ке education туралы ойланып, оқуға clearer purpose арқылы қайтуға көмектеседі.</span>
+                <span data-lang="ru"><b>C</b> правильно. Main idea: gap year помогает некоторым students вернуться к education with clearer purpose.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="b">
+              <p>2. What is a “gap year” according to the passage?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq2" value="a"> A. A year when students study only online</label>
+                <label class="option"><input type="radio" name="rq2" value="b"> B. A period between school and university used for new experiences</label>
+                <label class="option"><input type="radio" name="rq2" value="c"> C. A university course for older teachers</label>
+                <label class="option"><input type="radio" name="rq2" value="d"> D. A compulsory year of exams before school finishes</label>
+                <label class="option"><input type="radio" name="rq2" value="e"> E. A year when students are not allowed to work</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>B</b> дұрыс. Gap year — school мен university арасындағы уақыт, онда жастар new experiences алады.</span>
+                <span data-lang="ru"><b>B</b> правильно. Gap year — это время между school и university для new experiences.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="e">
+              <p>3. Why do some gappers take casual work while travelling?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq3" value="a"> A. To avoid meeting people from other countries</label>
+                <label class="option"><input type="radio" name="rq3" value="b"> B. To replace all forms of education permanently</label>
+                <label class="option"><input type="radio" name="rq3" value="c"> C. To become university admissions officers</label>
+                <label class="option"><input type="radio" name="rq3" value="d"> D. To stop themselves from becoming independent adults</label>
+                <label class="option"><input type="radio" name="rq3" value="e"> E. To add to their limited funds</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>E</b> дұрыс. Specific detail: gappers limited funds-ты supplement ету үшін casual work алады.</span>
+                <span data-lang="ru"><b>E</b> правильно. Specific detail: gappers take casual work to supplement their limited funds.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="a">
+              <p>4. What does the word “renewing” mean in the passage?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq4" value="a"> A. Giving new energy or interest to something</label>
+                <label class="option"><input type="radio" name="rq4" value="b"> B. Completely removing an interest in education</label>
+                <label class="option"><input type="radio" name="rq4" value="c"> C. Making university entrance impossible</label>
+                <label class="option"><input type="radio" name="rq4" value="d"> D. Replacing study with permanent travel</label>
+                <label class="option"><input type="radio" name="rq4" value="e"> E. Forgetting previous school experience</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>A</b> дұрыс. Renewing — әлсіреген interest-ті қайта күшейту, жаңа energy беру.</span>
+                <span data-lang="ru"><b>A</b> правильно. Renewing means giving new energy or interest to something.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="d">
+              <p>5. What do the UCAS figures suggest?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq5" value="a"> A. Fewer nineteen- and twenty-year-olds are entering higher education</label>
+                <label class="option"><input type="radio" name="rq5" value="b"> B. Only eighteen-year-olds can enter higher education</label>
+                <label class="option"><input type="radio" name="rq5" value="c"> C. Students over twenty are banned from university</label>
+                <label class="option"><input type="radio" name="rq5" value="d"> D. More students are entering higher education after a break</label>
+                <label class="option"><input type="radio" name="rq5" value="e"> E. University admissions have stopped collecting data</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>D</b> дұрыс. 19 және 20 жастағы students higher education-ға көбірек кіріп жатыр, бұл break after school идеясымен байланысты.</span>
+                <span data-lang="ru"><b>D</b> правильно. The figures suggest that more 19- and 20-year-old students enter higher education after a break.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="c">
+              <p>6. Why did Christine Samways not continue studying immediately after school?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq6" value="a"> A. She had failed all her school exams</label>
+                <label class="option"><input type="radio" name="rq6" value="b"> B. She had already completed a university degree</label>
+                <label class="option"><input type="radio" name="rq6" value="c"> C. She did not want to study then and feared higher education might be too challenging</label>
+                <label class="option"><input type="radio" name="rq6" value="d"> D. She was not allowed to gain a vocational qualification</label>
+                <label class="option"><input type="radio" name="rq6" value="e"> E. She believed qualifications had no connection with work choices</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>C</b> дұрыс. Christine did not want to continue studying және higher education challenges too great болуы мүмкін деп worried болды.</span>
+                <span data-lang="ru"><b>C</b> правильно. Christine did not want to continue studying and worried that higher education challenges would be too great.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="b">
+              <p>7. What did Christine realise after gaining a hairdressing qualification?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq7" value="a"> A. Hairdressing was exactly what she wanted forever</label>
+                <label class="option"><input type="radio" name="rq7" value="b"> B. She might need to return to education to get better work choices</label>
+                <label class="option"><input type="radio" name="rq7" value="c"> C. Qualifications reduce all career opportunities</label>
+                <label class="option"><input type="radio" name="rq7" value="d"> D. Working first makes education unnecessary for everyone</label>
+                <label class="option"><input type="radio" name="rq7" value="e"> E. University is useful only for people without exam passes</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>B</b> дұрыс. Christine right qualifications болмаса fewer work choices болатынын түсінді.</span>
+                <span data-lang="ru"><b>B</b> правильно. Christine realised that without the right qualifications people have fewer work choices.</span>
+              </div>
+            </div>
+
+            <div class="question" data-answer="a">
+              <p>8. Which title best matches the passage?</p>
+              <div class="options">
+                <label class="option"><input type="radio" name="rq8" value="a"> A. Gap Years and a New Sense of Educational Purpose</label>
+                <label class="option"><input type="radio" name="rq8" value="b"> B. Why School Leavers Should Never Work</label>
+                <label class="option"><input type="radio" name="rq8" value="c"> C. The History of Hairdressing Qualifications</label>
+                <label class="option"><input type="radio" name="rq8" value="d"> D. How UCAS Stopped University Admissions</label>
+                <label class="option"><input type="radio" name="rq8" value="e"> E. Travelling as a Replacement for All Study</label>
+              </div>
+              <div class="explanation">
+                <span data-lang="kk"><b>A</b> дұрыс. Best title gap year, education-ға қайта оралу және purpose идеясын қамтиды.</span>
+                <span data-lang="ru"><b>A</b> правильно. Best title covers gap year, return to education and purpose.</span>
               </div>
             </div>
 
@@ -1354,12 +1490,6 @@
   </footer>
 
   <script>
-    const sectionMax = {
-      listening: 8,
-      grammar: 15,
-      reading: 8
-    };
-
     const sectionScores = {
       listening: null,
       grammar: null,
@@ -1522,4 +1652,3 @@
   </script>
 </body>
 </html>
-    
