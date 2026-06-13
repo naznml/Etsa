@@ -3,340 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free English Mini Test · Master's Admission</title>
+  <title>Free English Mini Test · Listening Grammar Reading</title>
 
   <style>
     :root{
-      --bg1:#f7f4ff;
-      --bg2:#eef6ff;
-      --card:rgba(255,255,255,.9);
-      --text:#111827;
-      --muted:#6b7280;
-      --purple:#6d28d9;
-      --purple2:#7c3aed;
-      --blue:#2563eb;
-      --green:#15803d;
-      --red:#b91c1c;
-      --soft:#ede9fe;
-      --border:#ddd6fe;
-      --shadow:0 18px 50px rgba(88,28,135,.12);
-      --radius:26px;
+      --bg1:#f7f4ff;--bg2:#eef6ff;--card:rgba(255,255,255,.9);
+      --text:#111827;--muted:#6b7280;--purple:#6d28d9;--blue:#2563eb;
+      --soft:#ede9fe;--border:#ddd6fe;--green:#15803d;--red:#b91c1c;
+      --shadow:0 18px 50px rgba(88,28,135,.12);--radius:26px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at top left,rgba(196,181,253,.48),transparent 34%),
-        radial-gradient(circle at top right,rgba(191,219,254,.45),transparent 32%),
-        linear-gradient(135deg,var(--bg1),var(--bg2));
+      background:radial-gradient(circle at top left,rgba(196,181,253,.48),transparent 34%),
+                 radial-gradient(circle at top right,rgba(191,219,254,.45),transparent 32%),
+                 linear-gradient(135deg,var(--bg1),var(--bg2));
       min-height:100vh;
     }
-
-    body.lang-kk [data-lang="ru"],
-    body.lang-ru [data-lang="kk"]{display:none!important}
-
+    body.lang-kk [data-lang="ru"],body.lang-ru [data-lang="kk"]{display:none!important}
+    .shell{width:min(1120px,calc(100% - 28px));margin:0 auto}
     a{text-decoration:none;color:inherit}
-    .shell{width:min(1160px,calc(100% - 28px));margin:0 auto}
 
     .topbar{padding:22px 0 12px}
     .topbar-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:14px 16px;
-      border-radius:999px;
-      background:rgba(255,255,255,.75);
-      border:1px solid rgba(124,58,237,.16);
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 16px;border-radius:999px;background:rgba(255,255,255,.76);
+      border:1px solid rgba(124,58,237,.16);box-shadow:0 14px 35px rgba(88,28,135,.1);
       backdrop-filter:blur(16px);
-      box-shadow:0 14px 35px rgba(88,28,135,.1);
     }
-
     .brand{display:flex;align-items:center;gap:10px;min-width:0}
     .brand-mark{
-      width:40px;height:40px;border-radius:15px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--purple2),var(--blue));
-      color:#fff;font-weight:950;
-      box-shadow:0 10px 25px rgba(109,40,217,.24);
-      flex:0 0 auto;
+      width:40px;height:40px;border-radius:15px;background:linear-gradient(135deg,#7c3aed,#2563eb);
+      color:#fff;display:grid;place-items:center;font-weight:950;flex:0 0 auto;
     }
-    .brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+    .brand-text{display:flex;flex-direction:column;line-height:1.12;min-width:0}
     .brand-text b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .brand-text span{font-size:12px;color:var(--muted);font-weight:700;margin-top:3px}
-
-    .lang-switch{
-      display:flex;gap:8px;padding:5px;
-      border-radius:999px;
-      background:rgba(237,233,254,.86);
-      border:1px solid rgba(124,58,237,.12);
-      flex:0 0 auto;
-    }
-    .lang-btn{
-      border:0;cursor:pointer;border-radius:999px;
-      padding:9px 14px;
-      font-weight:900;
-      color:#4c1d95;background:transparent;
-    }
-    .lang-btn.active{
-      background:#fff;color:var(--purple);
-      box-shadow:0 8px 20px rgba(88,28,135,.12);
-    }
+    .brand-text span{font-size:12px;color:var(--muted);font-weight:750;margin-top:3px}
+    .lang-switch{display:flex;gap:8px;padding:5px;border-radius:999px;background:rgba(237,233,254,.86);border:1px solid rgba(124,58,237,.12)}
+    .lang-btn{border:0;cursor:pointer;border-radius:999px;padding:9px 14px;font-weight:950;color:#4c1d95;background:transparent}
+    .lang-btn.active{background:#fff;color:var(--purple);box-shadow:0 8px 20px rgba(88,28,135,.12)}
 
     .hero{padding:40px 0 20px}
     .hero-card{
-      position:relative;overflow:hidden;
-      border-radius:38px;
-      padding:clamp(26px,5vw,52px);
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.96),rgba(245,243,255,.92)),
-        radial-gradient(circle at right top,rgba(124,58,237,.18),transparent 35%);
-      border:1px solid rgba(124,58,237,.16);
-      box-shadow:var(--shadow);
+      position:relative;overflow:hidden;border-radius:38px;padding:clamp(26px,5vw,52px);
+      background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(245,243,255,.92));
+      border:1px solid rgba(124,58,237,.16);box-shadow:var(--shadow);
     }
-    .hero-card::after{
-      content:"";position:absolute;
-      width:250px;height:250px;border-radius:50%;
-      right:-85px;bottom:-105px;
-      background:rgba(124,58,237,.12);
-    }
-
     .kicker{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:999px;
-      background:var(--soft);color:var(--purple);
-      border:1px solid var(--border);
-      font-weight:950;font-size:13px;
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+      background:var(--soft);color:var(--purple);border:1px solid var(--border);
+      font-size:13px;font-weight:950;
     }
     h1{
-      margin:18px 0 14px;
-      max-width:900px;
-      font-size:clamp(34px,6vw,64px);
-      line-height:.98;
-      letter-spacing:-.06em;
-      color:#1f1646;
-      position:relative;z-index:1;
+      margin:18px 0 14px;max-width:900px;font-size:clamp(34px,6vw,62px);
+      line-height:.98;letter-spacing:-.06em;color:#1f1646;
     }
-    .hero-desc{
-      max-width:780px;
-      color:#4b5563;
-      font-size:clamp(16px,2.2vw,20px);
-      line-height:1.7;
-      font-weight:650;
-      position:relative;z-index:1;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:14px;
-      margin-top:26px;
-      position:relative;z-index:1;
-    }
-    .mini{
-      padding:16px;border-radius:22px;
-      background:rgba(255,255,255,.8);
-      border:1px solid rgba(124,58,237,.12);
-    }
+    .hero-desc{max-width:790px;color:#4b5563;font-size:clamp(16px,2vw,20px);line-height:1.7;font-weight:650}
+    .hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+    .mini{padding:16px;border-radius:22px;background:rgba(255,255,255,.8);border:1px solid rgba(124,58,237,.12)}
     .mini b{display:block;font-size:22px;color:var(--purple);margin-bottom:4px}
-    .mini span{display:block;color:var(--muted);font-size:13px;font-weight:760;line-height:1.4}
+    .mini span{display:block;color:var(--muted);font-size:13px;font-weight:760}
 
     .nav-wrap{padding:12px 0 24px}
-    .nav{
-      display:flex;flex-wrap:wrap;gap:10px;
-      padding:12px;border-radius:26px;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(124,58,237,.12);
-      box-shadow:0 14px 36px rgba(88,28,135,.08);
-    }
-    .nav a{
-      flex:1 1 210px;
-      padding:14px 16px;border-radius:20px;
-      background:rgba(237,233,254,.58);
-      color:#312e81;
-      border:1px solid rgba(124,58,237,.12);
-      font-weight:950;
-      line-height:1.35;
-    }
+    .nav{display:flex;flex-wrap:wrap;gap:10px;padding:12px;border-radius:26px;background:rgba(255,255,255,.72);border:1px solid rgba(124,58,237,.12)}
+    .nav a{flex:1 1 210px;padding:14px 16px;border-radius:20px;background:rgba(237,233,254,.58);color:#312e81;border:1px solid rgba(124,58,237,.12);font-weight:950}
     .nav small{display:block;margin-top:4px;color:#6b7280;font-weight:750}
 
     .section{padding:24px 0}
-    .block{
-      margin:0 0 28px;
-      padding:clamp(18px,3vw,28px);
-      border-radius:34px;
-      background:rgba(255,255,255,.64);
-      border:1px solid rgba(124,58,237,.14);
-      box-shadow:var(--shadow);
-    }
-    .two{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:18px;
-      align-items:start;
-    }
-    .card{
-      border-radius:var(--radius);
-      background:var(--card);
-      border:1px solid rgba(124,58,237,.13);
-      box-shadow:0 12px 32px rgba(88,28,135,.08);
-      padding:22px;
-    }
-    .section-title{
-      margin:14px 0 8px;
-      font-size:clamp(28px,4vw,42px);
-      line-height:1.05;
-      letter-spacing:-.045em;
-      color:#24164f;
-    }
-    .subtitle{color:var(--muted);font-weight:850;line-height:1.55}
-    .card-title{
-      margin:0 0 16px;
-      color:var(--purple);
-      font-size:22px;
-      letter-spacing:-.03em;
-    }
-    .text-box{
-      padding:20px;
-      border-radius:24px;
-      background:#fff;
-      border:1px solid rgba(124,58,237,.14);
-      line-height:1.75;
-      color:#1f2937;
-      font-weight:640;
-      font-size:16px;
-    }
-    .text-box p{margin:0 0 14px}
-    .text-box p:last-child{margin-bottom:0}
+    .block{margin:0 0 28px;padding:clamp(18px,3vw,28px);border-radius:34px;background:rgba(255,255,255,.64);border:1px solid rgba(124,58,237,.14);box-shadow:var(--shadow)}
+    .card{border-radius:var(--radius);background:var(--card);border:1px solid rgba(124,58,237,.13);box-shadow:0 12px 32px rgba(88,28,135,.08);padding:22px;margin-bottom:18px}
+    .section-title{margin:14px 0 8px;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.045em;color:#24164f}
+    .subtitle{color:var(--muted);font-weight:800;line-height:1.6}
+    .card-title{margin:0 0 16px;color:var(--purple);font-size:22px;letter-spacing:-.03em}
+    .text-box{padding:20px;border-radius:24px;background:#fff;border:1px solid rgba(124,58,237,.14);line-height:1.75;color:#1f2937;font-weight:640;font-size:16px}
+    .text-box p{margin:0 0 14px}.text-box p:last-child{margin-bottom:0}
+    audio{width:100%;margin:18px 0 10px}
+    .audio-card{margin-top:18px;padding:18px;border-radius:24px;background:#fff;border:1px solid rgba(124,58,237,.14)}
 
-    audio{width:100%;margin:12px 0 0}
+    .tab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+    .tab-btn{
+      border:1px solid rgba(124,58,237,.16);cursor:pointer;border-radius:18px;padding:14px 12px;
+      background:rgba(237,233,254,.62);color:#312e81;font-weight:950;text-align:center;
+    }
+    .tab-btn.active{background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;box-shadow:0 12px 26px rgba(37,99,235,.2)}
+    .tab-panel{display:none}.tab-panel.show{display:block}
 
-    .question{
-      padding:18px;
-      border-radius:24px;
-      background:rgba(249,250,251,.96);
-      border:1px solid rgba(148,163,184,.22);
-      margin-bottom:16px;
-    }
-    .question p{
-      margin:0 0 14px;
-      font-size:16px;
-      font-weight:950;
-      line-height:1.45;
-      color:#111827;
-    }
+    .translation-row{padding:14px;border-radius:18px;background:#fff;border:1px solid rgba(124,58,237,.12);margin-bottom:10px;line-height:1.65}
+    .translation-row b{display:block;color:#312e81;margin-bottom:6px}
+    .translation-row span{display:block;color:#374151;font-weight:700}
+
+    .vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .vocab-row{padding:13px;border-radius:17px;background:#fff;border:1px solid rgba(124,58,237,.12);line-height:1.45;font-weight:700}
+    .vocab-row b{display:block;color:#312e81;margin-bottom:5px}
+    .vocab-row span{display:block;color:#4b5563}
+
+    .question{padding:18px;border-radius:24px;background:rgba(249,250,251,.96);border:1px solid rgba(148,163,184,.22);margin-bottom:16px}
+    .question p{margin:0 0 14px;font-size:16px;font-weight:950;line-height:1.45;color:#111827}
     .options{display:grid;gap:10px}
-    .option{
-      display:flex;gap:10px;align-items:flex-start;
-      padding:13px 14px;
-      border-radius:17px;
-      background:#fff;
-      border:1px solid rgba(124,58,237,.13);
-      cursor:pointer;
-      font-weight:760;
-      line-height:1.45;
-      color:#374151;
-    }
+    .option{display:flex;gap:10px;align-items:flex-start;padding:13px 14px;border-radius:17px;background:#fff;border:1px solid rgba(124,58,237,.13);cursor:pointer;font-weight:760;line-height:1.45;color:#374151}
     .option input{margin-top:3px;flex:0 0 auto}
-    .option.correct{
-      border-color:rgba(22,163,74,.55)!important;
-      background:rgba(240,253,244,.95)!important;
-      color:#14532d!important;
-    }
-    .option.wrong{
-      border-color:rgba(239,68,68,.45)!important;
-      background:rgba(254,242,242,.95)!important;
-      color:#7f1d1d!important;
-    }
-    .explanation{
-      display:none;
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:16px;
-      background:rgba(240,253,244,.9);
-      border:1px solid rgba(22,163,74,.18);
-      color:#14532d;
-      line-height:1.6;
-      font-size:14px;
-      font-weight:750;
-    }
+    .option.correct{border-color:rgba(22,163,74,.55)!important;background:rgba(240,253,244,.95)!important;color:#14532d!important}
+    .option.wrong{border-color:rgba(239,68,68,.45)!important;background:rgba(254,242,242,.95)!important;color:#7f1d1d!important}
+    .explanation{display:none;margin-top:12px;padding:12px 14px;border-radius:16px;background:rgba(240,253,244,.9);border:1px solid rgba(22,163,74,.18);color:#14532d;line-height:1.6;font-size:14px;font-weight:750}
     .explanation.show{display:block}
-
-    .check-btn,.final-btn{
-      width:100%;
-      border:0;cursor:pointer;
-      padding:15px 18px;
-      border-radius:20px;
-      background:linear-gradient(135deg,var(--purple2),var(--blue));
-      color:#fff;
-      font-size:16px;
-      font-weight:950;
-      box-shadow:0 14px 32px rgba(37,99,235,.22);
-    }
-    .result-box{
-      display:none;
-      margin-top:14px;
-      padding:14px;
-      border-radius:18px;
-      background:rgba(255,255,255,.9);
-      border:1px solid rgba(22,163,74,.18);
-      color:#14532d;
-      font-weight:900;
-      line-height:1.6;
-    }
+    .check-btn,.final-btn{width:100%;border:0;cursor:pointer;padding:15px 18px;border-radius:20px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;font-size:16px;font-weight:950;box-shadow:0 14px 32px rgba(37,99,235,.22)}
+    .result-box{display:none;margin-top:14px;padding:14px;border-radius:18px;background:rgba(255,255,255,.9);border:1px solid rgba(22,163,74,.18);color:#14532d;font-weight:900;line-height:1.6}
     .result-box.show{display:block}
-    .score-line{
-      padding:12px 14px;
-      border-radius:16px;
-      background:rgba(240,253,244,.9);
-      border:1px solid rgba(22,163,74,.18);
-    }
-
-    .hidden-panel{display:none;margin-top:18px}
-    .hidden-panel.show{display:block}
-
-    .final-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:14px;
-      margin-top:16px;
-    }
-    .score-card{
-      padding:16px;border-radius:20px;
-      background:#fff;
-      border:1px solid rgba(124,58,237,.14);
-      font-weight:850;
-    }
+    .score-line{padding:12px 14px;border-radius:16px;background:rgba(240,253,244,.9);border:1px solid rgba(22,163,74,.18)}
+    .final-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+    .score-card{padding:16px;border-radius:20px;background:#fff;border:1px solid rgba(124,58,237,.14);font-weight:850}
     .score-card b{display:block;color:var(--purple);font-size:26px;margin-bottom:4px}
 
     footer{padding:30px 0 44px}
-    .footer-card{
-      border-radius:26px;
-      padding:22px;
-      background:rgba(255,255,255,.86);
-      border:1px solid rgba(124,58,237,.13);
-      box-shadow:var(--shadow);
-      color:#4b5563;
-      font-weight:700;
-      line-height:1.7;
-    }
+    .footer-card{border-radius:26px;padding:22px;background:rgba(255,255,255,.86);border:1px solid rgba(124,58,237,.13);box-shadow:var(--shadow);color:#4b5563;font-weight:700;line-height:1.7}
 
-    @media(max-width:860px){
-      .hero-grid,.two,.final-grid{grid-template-columns:1fr}
-      .topbar-inner{border-radius:24px;align-items:flex-start}
-      .brand-text b{white-space:normal}
-    }
-    @media(max-width:560px){
-      .shell{width:min(100% - 18px,1160px)}
-      .hero-card,.block{border-radius:26px}
-      .card{padding:16px}
-      .text-box{padding:16px;font-size:15px}
-      .question{padding:14px}
-      .option{padding:12px}
-    }
+    @media(max-width:860px){.hero-grid,.tab-grid,.vocab-grid,.final-grid{grid-template-columns:1fr}.topbar-inner{border-radius:24px;align-items:flex-start}.brand-text b{white-space:normal}}
+    @media(max-width:560px){.shell{width:min(100% - 18px,1120px)}.hero-card,.block{border-radius:26px}.card{padding:16px}.text-box{padding:16px;font-size:15px}.question{padding:14px}.option{padding:12px}}
   </style>
 </head>
 
@@ -348,13 +132,9 @@
           <div class="brand-mark">EN</div>
           <div class="brand-text">
             <b>Free English Mini Test · Master's Admission</b>
-            <span>
-              <span data-lang="kk">Listening · Grammar · Reading</span>
-              <span data-lang="ru">Listening · Grammar · Reading</span>
-            </span>
+            <span>Listening · Grammar · Reading</span>
           </div>
         </div>
-
         <div class="lang-switch">
           <button class="lang-btn active" type="button" data-set-lang="kk">KZ</button>
           <button class="lang-btn" type="button" data-set-lang="ru">RU</button>
@@ -371,24 +151,14 @@
             <span data-lang="kk">Тегін мини-тест</span>
             <span data-lang="ru">Бесплатный мини-тест</span>
           </div>
-
           <h1>
             <span data-lang="kk">Магистратураға ағылшын тілінен қысқа диагностика</span>
             <span data-lang="ru">Короткая диагностика по английскому для магистратуры</span>
           </h1>
-
           <p class="hero-desc">
-            <span data-lang="kk">
-              Бұл — толық дайындық сайттарының кішкентай бөлігі. Мұнда 1 Listening,
-              15 Grammar сұрағы және 1 Reading берілген. Жауаптарды тексергеннен кейін
-              нәтиже мен түсіндірмелер бірден шығады.
-            </span>
-            <span data-lang="ru">
-              Это маленькая часть полного подготовительного материала. Здесь есть 1 Listening,
-              15 вопросов Grammar и 1 Reading. После проверки вы сразу увидите результат и объяснения.
-            </span>
+            <span data-lang="kk">Бұл — толық дайындық сайттарының кішкентай бөлігі. Мұнда 1 Listening, 15 Grammar сұрағы және 1 Reading бар. Жауаптан кейін түсіндірмелер шығады.</span>
+            <span data-lang="ru">Это маленькая часть полного подготовительного материала. Здесь есть 1 Listening, 15 вопросов Grammar и 1 Reading. После проверки появляются объяснения.</span>
           </p>
-
           <div class="hero-grid">
             <div class="mini"><b>8</b><span>Listening questions</span></div>
             <div class="mini"><b>15</b><span>Grammar questions</span></div>
@@ -402,690 +172,349 @@
     <section class="nav-wrap">
       <div class="shell">
         <nav class="nav">
-          <a href="#listening">
-            Listening
-            <small>
-              <span data-lang="kk">1 audio-style block · 8 сұрақ</span>
-              <span data-lang="ru">1 audio-style block · 8 вопросов</span>
-            </small>
-          </a>
-          <a href="#grammar">
-            Grammar
-            <small>
-              <span data-lang="kk">15 mixed grammar questions</span>
-              <span data-lang="ru">15 смешанных grammar questions</span>
-            </small>
-          </a>
-          <a href="#reading">
-            Reading
-            <small>
-              <span data-lang="kk">1 passage · 8 сұрақ</span>
-              <span data-lang="ru">1 passage · 8 вопросов</span>
-            </small>
-          </a>
-          <a href="#final">
-            Result
-            <small>
-              <span data-lang="kk">Жалпы нәтиже</span>
-              <span data-lang="ru">Общий результат</span>
-            </small>
-          </a>
+          <a href="#listening">Listening<small>Audio · test · transcript · vocabulary</small></a>
+          <a href="#grammar">Grammar<small>15 mixed questions</small></a>
+          <a href="#reading">Reading<small>1 passage · 8 questions</small></a>
+          <a href="#final">Result<small data-lang="kk">Жалпы нәтиже</small><small data-lang="ru">Общий результат</small></a>
         </nav>
       </div>
     </section>
 
-    <!-- LISTENING -->
     <section class="section" id="listening">
       <div class="shell">
         <div class="block">
-          <div class="two">
-            <article class="card">
-              <div class="kicker">Part 1 · Listening</div>
-              <h2 class="section-title">Workplace Announcement</h2>
-              <div class="subtitle">
-                <span data-lang="kk">Аудионы тыңдап, 8 сұраққа жауап беріңіз.</span>
-                <span data-lang="ru">Послушайте аудио и ответьте на 8 вопросов.</span>
-              </div>
+          <div class="card">
+            <div class="kicker">Part 1 · Listening</div>
+            <h2 class="section-title">Workplace Announcement</h2>
+            <p class="subtitle">
+              <span data-lang="kk">Алдымен аудионы тыңдаңыз. Кейін төмендегі карточкалардан Test, Transcript, Translation және Vocabulary бөлімдерін ашыңыз.</span>
+              <span data-lang="ru">Сначала прослушайте аудио. Затем откройте карточки Test, Transcript, Translation и Vocabulary ниже.</span>
+            </p>
 
+            <div class="audio-card">
               <audio controls src="E.m4a">
                 Your browser does not support the audio element.
               </audio>
+              <p class="subtitle" style="margin:8px 0 0;">
+                <span data-lang="kk">Файл атауы: <b>E.m4a</b>. Ол index.html файлымен бір папкада тұруы керек.</span>
+                <span data-lang="ru">Название файла: <b>E.m4a</b>. Он должен лежать в одной папке с index.html.</span>
+              </p>
+            </div>
 
-              <div class="hidden-panel" id="listening-transcript">
-                <h3 class="card-title" style="margin-top:22px;">Transcript</h3>
-                <div class="text-box">
-                  <p>
-                    Hi, everyone. I know you're all busy so I'll keep this briefing quick. I have some important
-                    information about a change in the management team. As you already know, our head of department,
-                    James Watson, is leaving his position at the end of this week. His replacement is starting at
-                    the end of the next month. In the meantime, we'll continue with our projects as usual.
-                  </p>
-                  <p>
-                    I have two more quick points. Firstly, there will be some improvements made to the staff car
-                    park next month for a few weeks. It will be closed during that time. We can use the local church
-                    car park until our own one is ready. If you arrive before 8.30 a.m., please use our small car
-                    park on Brown Street, and if you arrive after that, you should go directly to the church car park.
-                    It's only a five-minute walk away. But they need it in the evenings, so you have to leave before
-                    6 p.m.
-                  </p>
-                  <p>
-                    The canteen has now introduced a cashless payment system. You can't use cash for payments any more.
-                    You can pay directly with your smartphone or you can pay using your company ID card. The total
-                    amount put on your company ID card comes off your salary at the end of each month.
-                  </p>
+            <div class="tab-grid">
+              <button class="tab-btn active" type="button" data-tab="listen-test">Test</button>
+              <button class="tab-btn" type="button" data-tab="listen-transcript">Transcript</button>
+              <button class="tab-btn" type="button" data-tab="listen-translation">Translation</button>
+              <button class="tab-btn" type="button" data-tab="listen-vocab">Vocabulary</button>
+            </div>
+
+            <div class="tab-panel show" id="listen-test">
+              <div data-test="listening">
+                <h3 class="card-title">Listening · Questions</h3>
+
+                <div class="question" data-answer="c">
+                  <p>1. What is the main purpose of the announcement?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq1" value="a"> A. To introduce a new company product</label>
+                    <label class="option"><input type="radio" name="lq1" value="b"> B. To cancel all current projects</label>
+                    <label class="option"><input type="radio" name="lq1" value="c"> C. To give staff several workplace updates</label>
+                    <label class="option"><input type="radio" name="lq1" value="d"> D. To discuss salary increases</label>
+                    <label class="option"><input type="radio" name="lq1" value="e"> E. To announce a staff holiday</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>C</b> дұрыс. Announcement бірнеше workplace updates береді: management change, car park және canteen payment.</span>
+                    <span data-lang="ru"><b>C</b> правильно. Announcement даёт несколько workplace updates: management change, car park и canteen payment.</span>
+                  </div>
                 </div>
+
+                <div class="question" data-answer="b">
+                  <p>2. When is James Watson leaving his position?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq2" value="a"> A. At the beginning of this week</label>
+                    <label class="option"><input type="radio" name="lq2" value="b"> B. At the end of this week</label>
+                    <label class="option"><input type="radio" name="lq2" value="c"> C. At the end of next month</label>
+                    <label class="option"><input type="radio" name="lq2" value="d"> D. Before 8.30 a.m.</label>
+                    <label class="option"><input type="radio" name="lq2" value="e"> E. Before 6 p.m.</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>B</b> дұрыс. James Watson is leaving his position at the end of this week.</span>
+                    <span data-lang="ru"><b>B</b> правильно. James Watson уходит с должности at the end of this week.</span>
+                  </div>
+                </div>
+
+                <div class="question" data-answer="e">
+                  <p>3. When will James Watson’s replacement start?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq3" value="a"> A. Today</label>
+                    <label class="option"><input type="radio" name="lq3" value="b"> B. Tomorrow morning</label>
+                    <label class="option"><input type="radio" name="lq3" value="c"> C. At the end of this week</label>
+                    <label class="option"><input type="radio" name="lq3" value="d"> D. In a few weeks</label>
+                    <label class="option"><input type="radio" name="lq3" value="e"> E. At the end of next month</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>E</b> дұрыс. Replacement is starting at the end of the next month.</span>
+                    <span data-lang="ru"><b>E</b> правильно. Замена начнёт работу at the end of the next month.</span>
+                  </div>
+                </div>
+
+                <div class="question" data-answer="a">
+                  <p>4. What will happen to the staff car park next month?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq4" value="a"> A. It will be closed for improvements</label>
+                    <label class="option"><input type="radio" name="lq4" value="b"> B. It will open earlier than usual</label>
+                    <label class="option"><input type="radio" name="lq4" value="c"> C. It will be used only in the evenings</label>
+                    <label class="option"><input type="radio" name="lq4" value="d"> D. It will become a church car park</label>
+                    <label class="option"><input type="radio" name="lq4" value="e"> E. It will be closed permanently</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>A</b> дұрыс. Staff car park next month for improvements closed болады.</span>
+                    <span data-lang="ru"><b>A</b> правильно. Staff car park будет закрыт на улучшения.</span>
+                  </div>
+                </div>
+
+                <div class="question" data-answer="d">
+                  <p>5. Where should staff park if they arrive before 8.30 a.m.?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq5" value="a"> A. At the church car park</label>
+                    <label class="option"><input type="radio" name="lq5" value="b"> B. Near the canteen</label>
+                    <label class="option"><input type="radio" name="lq5" value="c"> C. In the main staff car park</label>
+                    <label class="option"><input type="radio" name="lq5" value="d"> D. In the small car park on Brown Street</label>
+                    <label class="option"><input type="radio" name="lq5" value="e"> E. In the management parking area</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>D</b> дұрыс. Before 8.30 a.m. келгендер Brown Street-тегі small car park қолданады.</span>
+                    <span data-lang="ru"><b>D</b> правильно. До 8:30 нужно использовать small car park on Brown Street.</span>
+                  </div>
+                </div>
+
+                <div class="question" data-answer="b">
+                  <p>6. Where should staff go if they arrive after 8.30 a.m.?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq6" value="a"> A. To Brown Street</label>
+                    <label class="option"><input type="radio" name="lq6" value="b"> B. To the local church car park</label>
+                    <label class="option"><input type="radio" name="lq6" value="c"> C. To the staff entrance</label>
+                    <label class="option"><input type="radio" name="lq6" value="d"> D. To James Watson’s office</label>
+                    <label class="option"><input type="radio" name="lq6" value="e"> E. To the canteen</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>B</b> дұрыс. After 8.30 a.m. келгендер directly to the church car park баруы керек.</span>
+                    <span data-lang="ru"><b>B</b> правильно. После 8:30 нужно ехать directly to the church car park.</span>
+                  </div>
+                </div>
+
+                <div class="question" data-answer="c">
+                  <p>7. What rule is mentioned about the church car park?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq7" value="a"> A. Staff can park there all night</label>
+                    <label class="option"><input type="radio" name="lq7" value="b"> B. Staff must arrive after 6 p.m.</label>
+                    <label class="option"><input type="radio" name="lq7" value="c"> C. Staff must leave before 6 p.m.</label>
+                    <label class="option"><input type="radio" name="lq7" value="d"> D. Staff must pay with cash</label>
+                    <label class="option"><input type="radio" name="lq7" value="e"> E. Staff can use it only at weekends</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>C</b> дұрыс. Church car park evenings керек болғандықтан, staff before 6 p.m. leave етуі керек.</span>
+                    <span data-lang="ru"><b>C</b> правильно. Church car park нужен вечером, поэтому нужно leave before 6 p.m.</span>
+                  </div>
+                </div>
+
+                <div class="question" data-answer="a">
+                  <p>8. How can staff pay in the canteen now?</p>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="lq8" value="a"> A. With a smartphone or company ID card</label>
+                    <label class="option"><input type="radio" name="lq8" value="b"> B. Only with cash</label>
+                    <label class="option"><input type="radio" name="lq8" value="c"> C. Only at the end of the year</label>
+                    <label class="option"><input type="radio" name="lq8" value="d"> D. With a parking ticket</label>
+                    <label class="option"><input type="radio" name="lq8" value="e"> E. By asking James Watson</label>
+                  </div>
+                  <div class="explanation">
+                    <span data-lang="kk"><b>A</b> дұрыс. Canteen cashless system енгізді: smartphone немесе company ID card арқылы төлеуге болады.</span>
+                    <span data-lang="ru"><b>A</b> правильно. В canteen теперь cashless system: smartphone или company ID card.</span>
+                  </div>
+                </div>
+
+                <button class="check-btn" type="button" data-check="listening">
+                  <span data-lang="kk">Listening жауаптарын тексеру</span>
+                  <span data-lang="ru">Проверить Listening</span>
+                </button>
+                <div class="result-box" data-result="listening"></div>
               </div>
-            </article>
+            </div>
 
-            <article class="card" data-test="listening">
-              <h3 class="card-title">Listening · Questions</h3>
-
-              <div class="question" data-answer="c">
-                <p>1. What is the main purpose of the announcement?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq1" value="a"> A. To introduce a new company product</label>
-                  <label class="option"><input type="radio" name="lq1" value="b"> B. To cancel all current projects</label>
-                  <label class="option"><input type="radio" name="lq1" value="c"> C. To give staff several workplace updates</label>
-                  <label class="option"><input type="radio" name="lq1" value="d"> D. To discuss salary increases</label>
-                  <label class="option"><input type="radio" name="lq1" value="e"> E. To announce a staff holiday</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Announcement бірнеше workplace updates береді: management change, car park және canteen payment.</span>
-                  <span data-lang="ru"><b>C</b> правильно. Announcement даёт несколько workplace updates: management change, car park и canteen payment.</span>
-                </div>
+            <div class="tab-panel" id="listen-transcript">
+              <h3 class="card-title">Transcript</h3>
+              <div class="text-box">
+                <p>Hi, everyone. I know you're all busy so I'll keep this briefing quick.</p>
+                <p>I have some important information about a change in the management team.</p>
+                <p>As you already know, our head of department, James Watson, is leaving his position at the end of this week.</p>
+                <p>His replacement is starting at the end of the next month.</p>
+                <p>In the meantime, we'll continue with our projects as usual.</p>
+                <p>I have two more quick points. Firstly, there will be some improvements made to the staff car park next month for a few weeks.</p>
+                <p>It will be closed during that time.</p>
+                <p>We can use the local church car park until our own one is ready.</p>
+                <p>If you arrive before 8.30 a.m., please use our small car park on Brown Street, and if you arrive after that, you should go directly to the church car park.</p>
+                <p>It's only a five-minute walk away.</p>
+                <p>But they need it in the evenings, so you have to leave before 6 p.m.</p>
+                <p>The canteen has now introduced a cashless payment system.</p>
+                <p>So, you can't use cash for payments any more.</p>
+                <p>You can pay directly with your smartphone or you can pay using your company ID card.</p>
+                <p>The total amount put on your company ID card comes off your salary at the end of each month.</p>
               </div>
+            </div>
 
-              <div class="question" data-answer="b">
-                <p>2. When is James Watson leaving his position?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq2" value="a"> A. At the beginning of this week</label>
-                  <label class="option"><input type="radio" name="lq2" value="b"> B. At the end of this week</label>
-                  <label class="option"><input type="radio" name="lq2" value="c"> C. At the end of next month</label>
-                  <label class="option"><input type="radio" name="lq2" value="d"> D. Before 8.30 a.m.</label>
-                  <label class="option"><input type="radio" name="lq2" value="e"> E. Before 6 p.m.</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. James Watson is leaving his position at the end of this week.</span>
-                  <span data-lang="ru"><b>B</b> правильно. James Watson уходит с должности at the end of this week.</span>
-                </div>
+            <div class="tab-panel" id="listen-translation">
+              <h3 class="card-title">
+                <span data-lang="kk">Sentence-by-sentence translation</span>
+                <span data-lang="ru">Перевод по предложениям</span>
+              </h3>
+
+              <div class="translation-row"><b>Hi, everyone. I know you're all busy so I'll keep this briefing quick.</b><span data-lang="kk">Сәлем, бәріңізге. Бәріңіз бос емес екеніңізді білемін, сондықтан бұл қысқа ақпараттық жиналысты тез өткіземін.</span><span data-lang="ru">Всем привет. Я знаю, что вы все заняты, поэтому проведу этот краткий инструктаж быстро.</span></div>
+              <div class="translation-row"><b>I have some important information about a change in the management team.</b><span data-lang="kk">Менде басқару тобындағы өзгеріс туралы маңызды ақпарат бар.</span><span data-lang="ru">У меня есть важная информация об изменении в управленческой команде.</span></div>
+              <div class="translation-row"><b>Our head of department, James Watson, is leaving his position at the end of this week.</b><span data-lang="kk">Біздің бөлім басшысы Джеймс Уотсон осы аптаның соңында қызметінен кетеді.</span><span data-lang="ru">Наш руководитель отдела Джеймс Уотсон уходит со своей должности в конце этой недели.</span></div>
+              <div class="translation-row"><b>His replacement is starting at the end of the next month.</b><span data-lang="kk">Оның орнына келетін адам келесі айдың соңында жұмысын бастайды.</span><span data-lang="ru">Его замена начнёт работу в конце следующего месяца.</span></div>
+              <div class="translation-row"><b>In the meantime, we'll continue with our projects as usual.</b><span data-lang="kk">Осы аралықта біз жобаларымызды әдеттегідей жалғастырамыз.</span><span data-lang="ru">Тем временем мы продолжим наши проекты как обычно.</span></div>
+              <div class="translation-row"><b>There will be some improvements made to the staff car park next month for a few weeks.</b><span data-lang="kk">Келесі айда бірнеше апта бойы қызметкерлер тұрағына жақсарту жұмыстары жасалады.</span><span data-lang="ru">В следующем месяце в течение нескольких недель на парковке сотрудников будут проводиться улучшения.</span></div>
+              <div class="translation-row"><b>It will be closed during that time.</b><span data-lang="kk">Сол уақытта ол жабық болады.</span><span data-lang="ru">В это время она будет закрыта.</span></div>
+              <div class="translation-row"><b>We can use the local church car park until our own one is ready.</b><span data-lang="kk">Өз тұрағымыз дайын болғанша, жергілікті шіркеу тұрағын қолдана аламыз.</span><span data-lang="ru">Мы можем пользоваться парковкой местной церкви, пока наша собственная парковка не будет готова.</span></div>
+              <div class="translation-row"><b>If you arrive before 8.30 a.m., please use our small car park on Brown Street.</b><span data-lang="kk">Егер таңғы 8:30-ға дейін келсеңіз, Brown Street-тегі шағын тұрағымызды қолданыңыз.</span><span data-lang="ru">Если вы приезжаете до 8:30 утра, используйте нашу небольшую парковку на Brown Street.</span></div>
+              <div class="translation-row"><b>If you arrive after that, you should go directly to the church car park.</b><span data-lang="kk">Ал егер одан кейін келсеңіз, бірден шіркеу тұрағына баруыңыз керек.</span><span data-lang="ru">Если вы приезжаете позже, вам нужно ехать прямо на парковку церкви.</span></div>
+              <div class="translation-row"><b>It's only a five-minute walk away.</b><span data-lang="kk">Ол жер бар болғаны бес минуттық жаяу жерде.</span><span data-lang="ru">Она находится всего в пяти минутах ходьбы.</span></div>
+              <div class="translation-row"><b>They need it in the evenings, so you have to leave before 6 p.m.</b><span data-lang="kk">Оларға ол кешкі уақытта керек, сондықтан сіз 18:00-ге дейін кетуіңіз керек.</span><span data-lang="ru">Она нужна им по вечерам, поэтому нужно уехать до 18:00.</span></div>
+              <div class="translation-row"><b>The canteen has now introduced a cashless payment system.</b><span data-lang="kk">Асхана қазір қолма-қол ақшасыз төлем жүйесін енгізді.</span><span data-lang="ru">Столовая теперь ввела безналичную систему оплаты.</span></div>
+              <div class="translation-row"><b>You can't use cash for payments any more.</b><span data-lang="kk">Енді төлем үшін қолма-қол ақша қолдана алмайсыз.</span><span data-lang="ru">Теперь нельзя использовать наличные для оплаты.</span></div>
+              <div class="translation-row"><b>You can pay directly with your smartphone or using your company ID card.</b><span data-lang="kk">Сіз смартфонмен немесе компанияның ID картасымен тікелей төлей аласыз.</span><span data-lang="ru">Вы можете оплатить напрямую смартфоном или корпоративной ID-картой.</span></div>
+              <div class="translation-row"><b>The total amount comes off your salary at the end of each month.</b><span data-lang="kk">Жалпы сома әр айдың соңында жалақыңыздан ұсталады.</span><span data-lang="ru">Общая сумма списывается из вашей зарплаты в конце каждого месяца.</span></div>
+            </div>
+
+            <div class="tab-panel" id="listen-vocab">
+              <h3 class="card-title">Vocabulary</h3>
+              <div class="vocab-grid">
+                <div class="vocab-row"><b>briefing</b><span data-lang="kk">қысқа ақпараттық жиналыс</span><span data-lang="ru">краткий инструктаж</span></div>
+                <div class="vocab-row"><b>management team</b><span data-lang="kk">басқару тобы</span><span data-lang="ru">управленческая команда</span></div>
+                <div class="vocab-row"><b>head of department</b><span data-lang="kk">бөлім басшысы</span><span data-lang="ru">руководитель отдела</span></div>
+                <div class="vocab-row"><b>replacement</b><span data-lang="kk">орнына келетін адам</span><span data-lang="ru">замена, новый сотрудник на место</span></div>
+                <div class="vocab-row"><b>in the meantime</b><span data-lang="kk">осы аралықта</span><span data-lang="ru">тем временем</span></div>
+                <div class="vocab-row"><b>as usual</b><span data-lang="kk">әдеттегідей</span><span data-lang="ru">как обычно</span></div>
+                <div class="vocab-row"><b>staff car park</b><span data-lang="kk">қызметкерлер тұрағы</span><span data-lang="ru">парковка сотрудников</span></div>
+                <div class="vocab-row"><b>improvements</b><span data-lang="kk">жақсарту жұмыстары</span><span data-lang="ru">улучшения</span></div>
+                <div class="vocab-row"><b>local church car park</b><span data-lang="kk">жергілікті шіркеу тұрағы</span><span data-lang="ru">парковка местной церкви</span></div>
+                <div class="vocab-row"><b>directly</b><span data-lang="kk">бірден, тікелей</span><span data-lang="ru">прямо, непосредственно</span></div>
+                <div class="vocab-row"><b>canteen</b><span data-lang="kk">асхана</span><span data-lang="ru">столовая</span></div>
+                <div class="vocab-row"><b>cashless payment system</b><span data-lang="kk">қолма-қол ақшасыз төлем жүйесі</span><span data-lang="ru">безналичная система оплаты</span></div>
+                <div class="vocab-row"><b>company ID card</b><span data-lang="kk">компанияның ID картасы</span><span data-lang="ru">корпоративная ID-карта</span></div>
+                <div class="vocab-row"><b>salary</b><span data-lang="kk">жалақы</span><span data-lang="ru">зарплата</span></div>
               </div>
+            </div>
 
-              <div class="question" data-answer="e">
-                <p>3. When will James Watson’s replacement start?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq3" value="a"> A. Today</label>
-                  <label class="option"><input type="radio" name="lq3" value="b"> B. Tomorrow morning</label>
-                  <label class="option"><input type="radio" name="lq3" value="c"> C. At the end of this week</label>
-                  <label class="option"><input type="radio" name="lq3" value="d"> D. In a few weeks</label>
-                  <label class="option"><input type="radio" name="lq3" value="e"> E. At the end of next month</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>E</b> дұрыс. Replacement is starting at the end of the next month.</span>
-                  <span data-lang="ru"><b>E</b> правильно. Замена начнёт работу at the end of the next month.</span>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>4. What will happen to the staff car park next month?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq4" value="a"> A. It will be closed for improvements</label>
-                  <label class="option"><input type="radio" name="lq4" value="b"> B. It will open earlier than usual</label>
-                  <label class="option"><input type="radio" name="lq4" value="c"> C. It will be used only in the evenings</label>
-                  <label class="option"><input type="radio" name="lq4" value="d"> D. It will become a church car park</label>
-                  <label class="option"><input type="radio" name="lq4" value="e"> E. It will be closed permanently</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Staff car park next month for improvements closed болады.</span>
-                  <span data-lang="ru"><b>A</b> правильно. Staff car park будет закрыт на улучшения.</span>
-                </div>
-              </div>
-
-              <div class="question" data-answer="d">
-                <p>5. Where should staff park if they arrive before 8.30 a.m.?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq5" value="a"> A. At the church car park</label>
-                  <label class="option"><input type="radio" name="lq5" value="b"> B. Near the canteen</label>
-                  <label class="option"><input type="radio" name="lq5" value="c"> C. In the main staff car park</label>
-                  <label class="option"><input type="radio" name="lq5" value="d"> D. In the small car park on Brown Street</label>
-                  <label class="option"><input type="radio" name="lq5" value="e"> E. In the management parking area</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>D</b> дұрыс. Before 8.30 a.m. келгендер Brown Street-тегі small car park қолданады.</span>
-                  <span data-lang="ru"><b>D</b> правильно. До 8:30 нужно использовать small car park on Brown Street.</span>
-                </div>
-              </div>
-
-              <div class="question" data-answer="b">
-                <p>6. Where should staff go if they arrive after 8.30 a.m.?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq6" value="a"> A. To Brown Street</label>
-                  <label class="option"><input type="radio" name="lq6" value="b"> B. To the local church car park</label>
-                  <label class="option"><input type="radio" name="lq6" value="c"> C. To the staff entrance</label>
-                  <label class="option"><input type="radio" name="lq6" value="d"> D. To James Watson’s office</label>
-                  <label class="option"><input type="radio" name="lq6" value="e"> E. To the canteen</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. After 8.30 a.m. келгендер directly to the church car park баруы керек.</span>
-                  <span data-lang="ru"><b>B</b> правильно. После 8:30 нужно ехать directly to the church car park.</span>
-                </div>
-              </div>
-
-              <div class="question" data-answer="c">
-                <p>7. What rule is mentioned about the church car park?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq7" value="a"> A. Staff can park there all night</label>
-                  <label class="option"><input type="radio" name="lq7" value="b"> B. Staff must arrive after 6 p.m.</label>
-                  <label class="option"><input type="radio" name="lq7" value="c"> C. Staff must leave before 6 p.m.</label>
-                  <label class="option"><input type="radio" name="lq7" value="d"> D. Staff must pay with cash</label>
-                  <label class="option"><input type="radio" name="lq7" value="e"> E. Staff can use it only at weekends</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Church car park evenings керек болғандықтан, staff before 6 p.m. leave етуі керек.</span>
-                  <span data-lang="ru"><b>C</b> правильно. Church car park нужен вечером, поэтому нужно leave before 6 p.m.</span>
-                </div>
-              </div>
-
-              <div class="question" data-answer="a">
-                <p>8. How can staff pay in the canteen now?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="lq8" value="a"> A. With a smartphone or company ID card</label>
-                  <label class="option"><input type="radio" name="lq8" value="b"> B. Only with cash</label>
-                  <label class="option"><input type="radio" name="lq8" value="c"> C. Only at the end of the year</label>
-                  <label class="option"><input type="radio" name="lq8" value="d"> D. With a parking ticket</label>
-                  <label class="option"><input type="radio" name="lq8" value="e"> E. By asking James Watson</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Canteen cashless system енгізді: smartphone немесе company ID card арқылы төлеуге болады.</span>
-                  <span data-lang="ru"><b>A</b> правильно. В canteen теперь cashless system: smartphone или company ID card.</span>
-                </div>
-              </div>
-
-              <button class="check-btn" type="button" data-check="listening" data-extra="listening-transcript">
-                <span data-lang="kk">Listening жауаптарын тексеру</span>
-                <span data-lang="ru">Проверить Listening</span>
-              </button>
-              <div class="result-box" data-result="listening"></div>
-            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GRAMMAR -->
     <section class="section" id="grammar">
       <div class="shell">
         <div class="block">
-          <div class="two">
-            <article class="card">
-              <div class="kicker">Part 2 · Grammar</div>
-              <h2 class="section-title">Mixed Grammar Test</h2>
-              <div class="subtitle">
-                <span data-lang="kk">
-                  Бұл бөлімде 15 mixed grammar questions берілген. Тақырыптар: tenses, articles,
-                  prepositions, modals, conditionals, passive, reported speech, relative clauses,
-                  gerund/infinitive, comparatives және linking words.
-                </span>
-                <span data-lang="ru">
-                  В этом разделе 15 mixed grammar questions. Темы: tenses, articles, prepositions,
-                  modals, conditionals, passive, reported speech, relative clauses, gerund/infinitive,
-                  comparatives и linking words.
-                </span>
-              </div>
-            </article>
+          <div class="card">
+            <div class="kicker">Part 2 · Grammar</div>
+            <h2 class="section-title">Mixed Grammar Test</h2>
+            <p class="subtitle">
+              <span data-lang="kk">15 mixed grammar questions: tenses, articles, prepositions, modals, conditionals, passive, reported speech, relative clauses, gerund/infinitive, comparatives, linking words.</span>
+              <span data-lang="ru">15 mixed grammar questions: tenses, articles, prepositions, modals, conditionals, passive, reported speech, relative clauses, gerund/infinitive, comparatives, linking words.</span>
+            </p>
+          </div>
 
-            <article class="card" data-test="grammar">
-              <h3 class="card-title">Grammar · Questions</h3>
+          <div class="card" data-test="grammar">
+            <h3 class="card-title">Grammar · Questions</h3>
 
-              <div class="question" data-answer="c">
-                <p>1. I usually ____ coffee in the morning, but today I am drinking tea.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq1" value="a"> A. am drinking</label>
-                  <label class="option"><input type="radio" name="gq1" value="b"> B. drank</label>
-                  <label class="option"><input type="radio" name="gq1" value="c"> C. drink</label>
-                  <label class="option"><input type="radio" name="gq1" value="d"> D. have drunk</label>
-                  <label class="option"><input type="radio" name="gq1" value="e"> E. was drinking</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Usually — Present Simple белгісі: I usually drink.</span>
-                  <span data-lang="ru"><b>C</b> правильно. Usually показывает Present Simple: I usually drink.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="c"><p>1. I usually ____ coffee in the morning, but today I am drinking tea.</p><div class="options"><label class="option"><input type="radio" name="gq1" value="a"> A. am drinking</label><label class="option"><input type="radio" name="gq1" value="b"> B. drank</label><label class="option"><input type="radio" name="gq1" value="c"> C. drink</label><label class="option"><input type="radio" name="gq1" value="d"> D. have drunk</label><label class="option"><input type="radio" name="gq1" value="e"> E. was drinking</label></div><div class="explanation"><span data-lang="kk"><b>C</b> дұрыс. Usually — Present Simple белгісі.</span><span data-lang="ru"><b>C</b> правильно. Usually показывает Present Simple.</span></div></div>
 
-              <div class="question" data-answer="b">
-                <p>2. She ____ in this company since 2020.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq2" value="a"> A. works</label>
-                  <label class="option"><input type="radio" name="gq2" value="b"> B. has worked</label>
-                  <label class="option"><input type="radio" name="gq2" value="c"> C. worked</label>
-                  <label class="option"><input type="radio" name="gq2" value="d"> D. is working</label>
-                  <label class="option"><input type="radio" name="gq2" value="e"> E. had worked</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. Since 2020 — Present Perfect: has worked.</span>
-                  <span data-lang="ru"><b>B</b> правильно. Since 2020 требует Present Perfect: has worked.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="b"><p>2. She ____ in this company since 2020.</p><div class="options"><label class="option"><input type="radio" name="gq2" value="a"> A. works</label><label class="option"><input type="radio" name="gq2" value="b"> B. has worked</label><label class="option"><input type="radio" name="gq2" value="c"> C. worked</label><label class="option"><input type="radio" name="gq2" value="d"> D. is working</label><label class="option"><input type="radio" name="gq2" value="e"> E. had worked</label></div><div class="explanation"><span data-lang="kk"><b>B</b> дұрыс. Since 2020 — Present Perfect.</span><span data-lang="ru"><b>B</b> правильно. Since 2020 требует Present Perfect.</span></div></div>
 
-              <div class="question" data-answer="e">
-                <p>3. We arrived late because the train ____ before we reached the station.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq3" value="a"> A. leaves</label>
-                  <label class="option"><input type="radio" name="gq3" value="b"> B. has left</label>
-                  <label class="option"><input type="radio" name="gq3" value="c"> C. is leaving</label>
-                  <label class="option"><input type="radio" name="gq3" value="d"> D. will leave</label>
-                  <label class="option"><input type="radio" name="gq3" value="e"> E. had left</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>E</b> дұрыс. Бір past action басқа past action-нан бұрын болды: Past Perfect — had left.</span>
-                  <span data-lang="ru"><b>E</b> правильно. Действие произошло раньше другого past action: Past Perfect — had left.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="e"><p>3. We arrived late because the train ____ before we reached the station.</p><div class="options"><label class="option"><input type="radio" name="gq3" value="a"> A. leaves</label><label class="option"><input type="radio" name="gq3" value="b"> B. has left</label><label class="option"><input type="radio" name="gq3" value="c"> C. is leaving</label><label class="option"><input type="radio" name="gq3" value="d"> D. will leave</label><label class="option"><input type="radio" name="gq3" value="e"> E. had left</label></div><div class="explanation"><span data-lang="kk"><b>E</b> дұрыс. Past action басқа past action-нан бұрын болды: Past Perfect.</span><span data-lang="ru"><b>E</b> правильно. Действие произошло раньше другого past action: Past Perfect.</span></div></div>
 
-              <div class="question" data-answer="a">
-                <p>4. I bought ____ umbrella because it was raining heavily.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq4" value="a"> A. an</label>
-                  <label class="option"><input type="radio" name="gq4" value="b"> B. a</label>
-                  <label class="option"><input type="radio" name="gq4" value="c"> C. the</label>
-                  <label class="option"><input type="radio" name="gq4" value="d"> D. —</label>
-                  <label class="option"><input type="radio" name="gq4" value="e"> E. some</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Umbrella дауысты дыбыстан басталады, бір зат: an umbrella.</span>
-                  <span data-lang="ru"><b>A</b> правильно. Umbrella начинается с гласного звука: an umbrella.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="a"><p>4. I bought ____ umbrella because it was raining heavily.</p><div class="options"><label class="option"><input type="radio" name="gq4" value="a"> A. an</label><label class="option"><input type="radio" name="gq4" value="b"> B. a</label><label class="option"><input type="radio" name="gq4" value="c"> C. the</label><label class="option"><input type="radio" name="gq4" value="d"> D. —</label><label class="option"><input type="radio" name="gq4" value="e"> E. some</label></div><div class="explanation"><span data-lang="kk"><b>A</b> дұрыс. Umbrella дауысты дыбыстан басталады: an.</span><span data-lang="ru"><b>A</b> правильно. Umbrella начинается с гласного звука: an.</span></div></div>
 
-              <div class="question" data-answer="d">
-                <p>5. The book is different ____ the film.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq5" value="a"> A. with</label>
-                  <label class="option"><input type="radio" name="gq5" value="b"> B. on</label>
-                  <label class="option"><input type="radio" name="gq5" value="c"> C. for</label>
-                  <label class="option"><input type="radio" name="gq5" value="d"> D. from</label>
-                  <label class="option"><input type="radio" name="gq5" value="e"> E. at</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>D</b> дұрыс. Correct collocation: different from.</span>
-                  <span data-lang="ru"><b>D</b> правильно. Правильное сочетание: different from.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="d"><p>5. The book is different ____ the film.</p><div class="options"><label class="option"><input type="radio" name="gq5" value="a"> A. with</label><label class="option"><input type="radio" name="gq5" value="b"> B. on</label><label class="option"><input type="radio" name="gq5" value="c"> C. for</label><label class="option"><input type="radio" name="gq5" value="d"> D. from</label><label class="option"><input type="radio" name="gq5" value="e"> E. at</label></div><div class="explanation"><span data-lang="kk"><b>D</b> дұрыс. Correct collocation: different from.</span><span data-lang="ru"><b>D</b> правильно. Правильное сочетание: different from.</span></div></div>
 
-              <div class="question" data-answer="b">
-                <p>6. You ____ wear a seat belt when you drive. It is required by law.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq6" value="a"> A. might</label>
-                  <label class="option"><input type="radio" name="gq6" value="b"> B. must</label>
-                  <label class="option"><input type="radio" name="gq6" value="c"> C. would</label>
-                  <label class="option"><input type="radio" name="gq6" value="d"> D. could</label>
-                  <label class="option"><input type="radio" name="gq6" value="e"> E. may</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. Required by law — міндет: must.</span>
-                  <span data-lang="ru"><b>B</b> правильно. Required by law означает обязанность: must.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="b"><p>6. You ____ wear a seat belt when you drive. It is required by law.</p><div class="options"><label class="option"><input type="radio" name="gq6" value="a"> A. might</label><label class="option"><input type="radio" name="gq6" value="b"> B. must</label><label class="option"><input type="radio" name="gq6" value="c"> C. would</label><label class="option"><input type="radio" name="gq6" value="d"> D. could</label><label class="option"><input type="radio" name="gq6" value="e"> E. may</label></div><div class="explanation"><span data-lang="kk"><b>B</b> дұрыс. Required by law — міндет: must.</span><span data-lang="ru"><b>B</b> правильно. Required by law означает обязанность: must.</span></div></div>
 
-              <div class="question" data-answer="c">
-                <p>7. If I had more time, I ____ a new language.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq7" value="a"> A. learn</label>
-                  <label class="option"><input type="radio" name="gq7" value="b"> B. will learn</label>
-                  <label class="option"><input type="radio" name="gq7" value="c"> C. would learn</label>
-                  <label class="option"><input type="radio" name="gq7" value="d"> D. have learned</label>
-                  <label class="option"><input type="radio" name="gq7" value="e"> E. had learned</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Second Conditional: If + Past Simple, would + verb.</span>
-                  <span data-lang="ru"><b>C</b> правильно. Second Conditional: If + Past Simple, would + verb.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="c"><p>7. If I had more time, I ____ a new language.</p><div class="options"><label class="option"><input type="radio" name="gq7" value="a"> A. learn</label><label class="option"><input type="radio" name="gq7" value="b"> B. will learn</label><label class="option"><input type="radio" name="gq7" value="c"> C. would learn</label><label class="option"><input type="radio" name="gq7" value="d"> D. have learned</label><label class="option"><input type="radio" name="gq7" value="e"> E. had learned</label></div><div class="explanation"><span data-lang="kk"><b>C</b> дұрыс. Second Conditional: If + Past Simple, would + verb.</span><span data-lang="ru"><b>C</b> правильно. Second Conditional: If + Past Simple, would + verb.</span></div></div>
 
-              <div class="question" data-answer="e">
-                <p>8. The report ____ by the manager yesterday.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq8" value="a"> A. writes</label>
-                  <label class="option"><input type="radio" name="gq8" value="b"> B. has written</label>
-                  <label class="option"><input type="radio" name="gq8" value="c"> C. is writing</label>
-                  <label class="option"><input type="radio" name="gq8" value="d"> D. wrote</label>
-                  <label class="option"><input type="radio" name="gq8" value="e"> E. was written</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>E</b> дұрыс. Passive Voice, Past Simple: was written.</span>
-                  <span data-lang="ru"><b>E</b> правильно. Passive Voice, Past Simple: was written.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="e"><p>8. The report ____ by the manager yesterday.</p><div class="options"><label class="option"><input type="radio" name="gq8" value="a"> A. writes</label><label class="option"><input type="radio" name="gq8" value="b"> B. has written</label><label class="option"><input type="radio" name="gq8" value="c"> C. is writing</label><label class="option"><input type="radio" name="gq8" value="d"> D. wrote</label><label class="option"><input type="radio" name="gq8" value="e"> E. was written</label></div><div class="explanation"><span data-lang="kk"><b>E</b> дұрыс. Passive Voice, Past Simple: was written.</span><span data-lang="ru"><b>E</b> правильно. Passive Voice, Past Simple: was written.</span></div></div>
 
-              <div class="question" data-answer="a">
-                <p>9. He said that he ____ tired.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq9" value="a"> A. was</label>
-                  <label class="option"><input type="radio" name="gq9" value="b"> B. is</label>
-                  <label class="option"><input type="radio" name="gq9" value="c"> C. will be</label>
-                  <label class="option"><input type="radio" name="gq9" value="d"> D. has been</label>
-                  <label class="option"><input type="radio" name="gq9" value="e"> E. were</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Reported speech: “I am tired” → he said he was tired.</span>
-                  <span data-lang="ru"><b>A</b> правильно. Reported speech: “I am tired” → he said he was tired.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="a"><p>9. He said that he ____ tired.</p><div class="options"><label class="option"><input type="radio" name="gq9" value="a"> A. was</label><label class="option"><input type="radio" name="gq9" value="b"> B. is</label><label class="option"><input type="radio" name="gq9" value="c"> C. will be</label><label class="option"><input type="radio" name="gq9" value="d"> D. has been</label><label class="option"><input type="radio" name="gq9" value="e"> E. were</label></div><div class="explanation"><span data-lang="kk"><b>A</b> дұрыс. Reported speech: “I am tired” → he said he was tired.</span><span data-lang="ru"><b>A</b> правильно. Reported speech: “I am tired” → he said he was tired.</span></div></div>
 
-              <div class="question" data-answer="b">
-                <p>10. The woman ____ lives next door is a doctor.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq10" value="a"> A. which</label>
-                  <label class="option"><input type="radio" name="gq10" value="b"> B. who</label>
-                  <label class="option"><input type="radio" name="gq10" value="c"> C. where</label>
-                  <label class="option"><input type="radio" name="gq10" value="d"> D. when</label>
-                  <label class="option"><input type="radio" name="gq10" value="e"> E. whose</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. Адам туралы relative pronoun: who.</span>
-                  <span data-lang="ru"><b>B</b> правильно. Для человека используем relative pronoun: who.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="b"><p>10. The woman ____ lives next door is a doctor.</p><div class="options"><label class="option"><input type="radio" name="gq10" value="a"> A. which</label><label class="option"><input type="radio" name="gq10" value="b"> B. who</label><label class="option"><input type="radio" name="gq10" value="c"> C. where</label><label class="option"><input type="radio" name="gq10" value="d"> D. when</label><label class="option"><input type="radio" name="gq10" value="e"> E. whose</label></div><div class="explanation"><span data-lang="kk"><b>B</b> дұрыс. Адам туралы relative pronoun: who.</span><span data-lang="ru"><b>B</b> правильно. Для человека используем relative pronoun: who.</span></div></div>
 
-              <div class="question" data-answer="d">
-                <p>11. She is interested in ____ abroad.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq11" value="a"> A. study</label>
-                  <label class="option"><input type="radio" name="gq11" value="b"> B. to study</label>
-                  <label class="option"><input type="radio" name="gq11" value="c"> C. studied</label>
-                  <label class="option"><input type="radio" name="gq11" value="d"> D. studying</label>
-                  <label class="option"><input type="radio" name="gq11" value="e"> E. studies</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>D</b> дұрыс. Interested in + gerund: studying.</span>
-                  <span data-lang="ru"><b>D</b> правильно. Interested in + gerund: studying.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="d"><p>11. She is interested in ____ abroad.</p><div class="options"><label class="option"><input type="radio" name="gq11" value="a"> A. study</label><label class="option"><input type="radio" name="gq11" value="b"> B. to study</label><label class="option"><input type="radio" name="gq11" value="c"> C. studied</label><label class="option"><input type="radio" name="gq11" value="d"> D. studying</label><label class="option"><input type="radio" name="gq11" value="e"> E. studies</label></div><div class="explanation"><span data-lang="kk"><b>D</b> дұрыс. Interested in + gerund: studying.</span><span data-lang="ru"><b>D</b> правильно. Interested in + gerund: studying.</span></div></div>
 
-              <div class="question" data-answer="c">
-                <p>12. This test is ____ than the previous one.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq12" value="a"> A. difficult</label>
-                  <label class="option"><input type="radio" name="gq12" value="b"> B. most difficult</label>
-                  <label class="option"><input type="radio" name="gq12" value="c"> C. more difficult</label>
-                  <label class="option"><input type="radio" name="gq12" value="d"> D. difficulty</label>
-                  <label class="option"><input type="radio" name="gq12" value="e"> E. as difficult</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Than бар: comparative form — more difficult.</span>
-                  <span data-lang="ru"><b>C</b> правильно. Than требует comparative form — more difficult.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="c"><p>12. This test is ____ than the previous one.</p><div class="options"><label class="option"><input type="radio" name="gq12" value="a"> A. difficult</label><label class="option"><input type="radio" name="gq12" value="b"> B. most difficult</label><label class="option"><input type="radio" name="gq12" value="c"> C. more difficult</label><label class="option"><input type="radio" name="gq12" value="d"> D. difficulty</label><label class="option"><input type="radio" name="gq12" value="e"> E. as difficult</label></div><div class="explanation"><span data-lang="kk"><b>C</b> дұрыс. Than бар: comparative form — more difficult.</span><span data-lang="ru"><b>C</b> правильно. Than требует comparative form — more difficult.</span></div></div>
 
-              <div class="question" data-answer="e">
-                <p>13. I was tired, ____ I continued working.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq13" value="a"> A. because</label>
-                  <label class="option"><input type="radio" name="gq13" value="b"> B. so</label>
-                  <label class="option"><input type="radio" name="gq13" value="c"> C. although</label>
-                  <label class="option"><input type="radio" name="gq13" value="d"> D. unless</label>
-                  <label class="option"><input type="radio" name="gq13" value="e"> E. but</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>E</b> дұрыс. Екі қарама-қарсы ой: I was tired, but I continued.</span>
-                  <span data-lang="ru"><b>E</b> правильно. Две противоположные идеи: I was tired, but I continued.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="e"><p>13. I was tired, ____ I continued working.</p><div class="options"><label class="option"><input type="radio" name="gq13" value="a"> A. because</label><label class="option"><input type="radio" name="gq13" value="b"> B. so</label><label class="option"><input type="radio" name="gq13" value="c"> C. although</label><label class="option"><input type="radio" name="gq13" value="d"> D. unless</label><label class="option"><input type="radio" name="gq13" value="e"> E. but</label></div><div class="explanation"><span data-lang="kk"><b>E</b> дұрыс. Екі қарама-қарсы ой: tired, but continued.</span><span data-lang="ru"><b>E</b> правильно. Две противоположные идеи: tired, but continued.</span></div></div>
 
-              <div class="question" data-answer="a">
-                <p>14. There isn’t ____ milk left in the fridge.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq14" value="a"> A. much</label>
-                  <label class="option"><input type="radio" name="gq14" value="b"> B. many</label>
-                  <label class="option"><input type="radio" name="gq14" value="c"> C. few</label>
-                  <label class="option"><input type="radio" name="gq14" value="d"> D. several</label>
-                  <label class="option"><input type="radio" name="gq14" value="e"> E. any of</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Milk — uncountable noun, сондықтан much.</span>
-                  <span data-lang="ru"><b>A</b> правильно. Milk — неисчисляемое существительное, поэтому much.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="a"><p>14. There isn’t ____ milk left in the fridge.</p><div class="options"><label class="option"><input type="radio" name="gq14" value="a"> A. much</label><label class="option"><input type="radio" name="gq14" value="b"> B. many</label><label class="option"><input type="radio" name="gq14" value="c"> C. few</label><label class="option"><input type="radio" name="gq14" value="d"> D. several</label><label class="option"><input type="radio" name="gq14" value="e"> E. any of</label></div><div class="explanation"><span data-lang="kk"><b>A</b> дұрыс. Milk — uncountable noun, сондықтан much.</span><span data-lang="ru"><b>A</b> правильно. Milk — неисчисляемое существительное, поэтому much.</span></div></div>
 
-              <div class="question" data-answer="b">
-                <p>15. I look forward to ____ from you soon.</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="gq15" value="a"> A. hear</label>
-                  <label class="option"><input type="radio" name="gq15" value="b"> B. hearing</label>
-                  <label class="option"><input type="radio" name="gq15" value="c"> C. heard</label>
-                  <label class="option"><input type="radio" name="gq15" value="d"> D. to hear</label>
-                  <label class="option"><input type="radio" name="gq15" value="e"> E. hears</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. Look forward to + gerund: hearing.</span>
-                  <span data-lang="ru"><b>B</b> правильно. Look forward to + gerund: hearing.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="b"><p>15. I look forward to ____ from you soon.</p><div class="options"><label class="option"><input type="radio" name="gq15" value="a"> A. hear</label><label class="option"><input type="radio" name="gq15" value="b"> B. hearing</label><label class="option"><input type="radio" name="gq15" value="c"> C. heard</label><label class="option"><input type="radio" name="gq15" value="d"> D. to hear</label><label class="option"><input type="radio" name="gq15" value="e"> E. hears</label></div><div class="explanation"><span data-lang="kk"><b>B</b> дұрыс. Look forward to + gerund: hearing.</span><span data-lang="ru"><b>B</b> правильно. Look forward to + gerund: hearing.</span></div></div>
 
-              <button class="check-btn" type="button" data-check="grammar">
-                <span data-lang="kk">Grammar жауаптарын тексеру</span>
-                <span data-lang="ru">Проверить Grammar</span>
-              </button>
-              <div class="result-box" data-result="grammar"></div>
-            </article>
+            <button class="check-btn" type="button" data-check="grammar"><span data-lang="kk">Grammar жауаптарын тексеру</span><span data-lang="ru">Проверить Grammar</span></button>
+            <div class="result-box" data-result="grammar"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- READING -->
     <section class="section" id="reading">
       <div class="shell">
         <div class="block">
-          <div class="two">
-            <article class="card">
-              <div class="kicker">Part 3 · Reading</div>
-              <h2 class="section-title">Language and Cultural Identity</h2>
-              <div class="subtitle">
-                <span data-lang="kk">Мәтінді оқып, 8 сұраққа жауап беріңіз.</span>
-                <span data-lang="ru">Прочитайте текст и ответьте на 8 вопросов.</span>
-              </div>
+          <div class="card">
+            <div class="kicker">Part 3 · Reading</div>
+            <h2 class="section-title">Language and Cultural Identity</h2>
+            <p class="subtitle"><span data-lang="kk">Алдымен мәтінді оқыңыз, кейін төмендегі 8 сұраққа жауап беріңіз.</span><span data-lang="ru">Сначала прочитайте текст, затем ответьте на 8 вопросов ниже.</span></p>
+            <div class="text-box" style="margin-top:18px;">
+              <p>Language is more than a tool for communication. It also carries history, values and cultural memory. Through language, people learn traditional expressions, family stories, songs, jokes and ways of showing respect. For this reason, language is closely connected with cultural identity.</p>
+              <p>In many countries, people speak more than one language. This can be a strength because it allows them to communicate with different communities and take part in global education, business and culture. At the same time, local and national languages need support. If a language becomes less common, some cultural knowledge may become harder to pass to the next generation.</p>
+              <p>Schools, families and media can help preserve language. Children learn not only grammar and vocabulary, but also how language is used in real life. Traditional songs, poems, films and books can make a language feel alive and meaningful.</p>
+              <p>However, language preservation should not mean rejecting other languages. In the modern world, people often need international languages for study and work. The challenge is to find balance: learning global languages while continuing to respect and use one’s own language.</p>
+            </div>
+          </div>
 
-              <div class="text-box" style="margin-top:18px;">
-                <p>
-                  Language is more than a tool for communication. It also carries history, values and cultural
-                  memory. Through language, people learn traditional expressions, family stories, songs, jokes
-                  and ways of showing respect. For this reason, language is closely connected with cultural identity.
-                </p>
-                <p>
-                  In many countries, people speak more than one language. This can be a strength because it allows
-                  them to communicate with different communities and take part in global education, business and
-                  culture. At the same time, local and national languages need support. If a language becomes less
-                  common, some cultural knowledge may become harder to pass to the next generation.
-                </p>
-                <p>
-                  Schools, families and media can help preserve language. Children learn not only grammar and
-                  vocabulary, but also how language is used in real life. Traditional songs, poems, films and books
-                  can make a language feel alive and meaningful.
-                </p>
-                <p>
-                  However, language preservation should not mean rejecting other languages. In the modern world,
-                  people often need international languages for study and work. The challenge is to find balance:
-                  learning global languages while continuing to respect and use one’s own language.
-                </p>
-              </div>
-            </article>
+          <div class="card" data-test="reading">
+            <h3 class="card-title">Reading · Questions</h3>
 
-            <article class="card" data-test="reading">
-              <h3 class="card-title">Reading · Questions</h3>
+            <div class="question" data-answer="c"><p>1. What is the main idea of the passage?</p><div class="options"><label class="option"><input type="radio" name="rq1" value="a"> A. Language is useful only for daily communication</label><label class="option"><input type="radio" name="rq1" value="b"> B. People should stop learning international languages</label><label class="option"><input type="radio" name="rq1" value="c"> C. Language supports cultural identity and needs balance with global communication</label><label class="option"><input type="radio" name="rq1" value="d"> D. Schools cannot help preserve language</label><label class="option"><input type="radio" name="rq1" value="e"> E. Cultural memory is not connected with language</label></div><div class="explanation"><span data-lang="kk"><b>C</b> дұрыс. Main idea — language cultural identity-ді сақтайды және global languages-пен balance керек.</span><span data-lang="ru"><b>C</b> правильно. Main idea: language supports cultural identity and needs balance with global languages.</span></div></div>
 
-              <div class="question" data-answer="c">
-                <p>1. What is the main idea of the passage?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq1" value="a"> A. Language is useful only for daily communication</label>
-                  <label class="option"><input type="radio" name="rq1" value="b"> B. People should stop learning international languages</label>
-                  <label class="option"><input type="radio" name="rq1" value="c"> C. Language supports cultural identity and needs balance with global communication</label>
-                  <label class="option"><input type="radio" name="rq1" value="d"> D. Schools cannot help preserve language</label>
-                  <label class="option"><input type="radio" name="rq1" value="e"> E. Cultural memory is not connected with language</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Main idea — language cultural identity-ді сақтайды және global languages-пен balance керек.</span>
-                  <span data-lang="ru"><b>C</b> правильно. Main idea: language supports cultural identity and needs balance with global languages.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="b"><p>2. What does language carry according to the passage?</p><div class="options"><label class="option"><input type="radio" name="rq2" value="a"> A. Only grammar rules</label><label class="option"><input type="radio" name="rq2" value="b"> B. History, values and cultural memory</label><label class="option"><input type="radio" name="rq2" value="c"> C. Only business information</label><label class="option"><input type="radio" name="rq2" value="d"> D. Weather and climate details</label><label class="option"><input type="radio" name="rq2" value="e"> E. Transport and trade systems</label></div><div class="explanation"><span data-lang="kk"><b>B</b> дұрыс. Мәтінде language history, values және cultural memory тасымалдайды деп берілген.</span><span data-lang="ru"><b>B</b> правильно. The text says language carries history, values and cultural memory.</span></div></div>
 
-              <div class="question" data-answer="b">
-                <p>2. What does language carry according to the passage?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq2" value="a"> A. Only grammar rules</label>
-                  <label class="option"><input type="radio" name="rq2" value="b"> B. History, values and cultural memory</label>
-                  <label class="option"><input type="radio" name="rq2" value="c"> C. Only business information</label>
-                  <label class="option"><input type="radio" name="rq2" value="d"> D. Weather and climate details</label>
-                  <label class="option"><input type="radio" name="rq2" value="e"> E. Transport and trade systems</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. Мәтінде language history, values және cultural memory тасымалдайды деп берілген.</span>
-                  <span data-lang="ru"><b>B</b> правильно. The text says language carries history, values and cultural memory.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="e"><p>3. Why can speaking more than one language be a strength?</p><div class="options"><label class="option"><input type="radio" name="rq3" value="a"> A. It makes local languages unnecessary</label><label class="option"><input type="radio" name="rq3" value="b"> B. It stops people from joining global education</label><label class="option"><input type="radio" name="rq3" value="c"> C. It removes cultural identity</label><label class="option"><input type="radio" name="rq3" value="d"> D. It makes communication harder</label><label class="option"><input type="radio" name="rq3" value="e"> E. It helps people communicate with different communities</label></div><div class="explanation"><span data-lang="kk"><b>E</b> дұрыс. More than one language білу different communities-пен communication жасауға көмектеседі.</span><span data-lang="ru"><b>E</b> правильно. Speaking more than one language helps people communicate with different communities.</span></div></div>
 
-              <div class="question" data-answer="e">
-                <p>3. Why can speaking more than one language be a strength?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq3" value="a"> A. It makes local languages unnecessary</label>
-                  <label class="option"><input type="radio" name="rq3" value="b"> B. It stops people from joining global education</label>
-                  <label class="option"><input type="radio" name="rq3" value="c"> C. It removes cultural identity</label>
-                  <label class="option"><input type="radio" name="rq3" value="d"> D. It makes communication harder</label>
-                  <label class="option"><input type="radio" name="rq3" value="e"> E. It helps people communicate with different communities</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>E</b> дұрыс. More than one language білу different communities-пен communication жасауға көмектеседі.</span>
-                  <span data-lang="ru"><b>E</b> правильно. Speaking more than one language helps people communicate with different communities.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="a"><p>4. What may happen if a language becomes less common?</p><div class="options"><label class="option"><input type="radio" name="rq4" value="a"> A. Some cultural knowledge may be harder to pass on</label><label class="option"><input type="radio" name="rq4" value="b"> B. Cultural memory becomes stronger automatically</label><label class="option"><input type="radio" name="rq4" value="c"> C. Families stop needing language</label><label class="option"><input type="radio" name="rq4" value="d"> D. Children learn culture more easily</label><label class="option"><input type="radio" name="rq4" value="e"> E. International languages disappear</label></div><div class="explanation"><span data-lang="kk"><b>A</b> дұрыс. Language less common болса, cultural knowledge next generation-ға жеткізу қиындайды.</span><span data-lang="ru"><b>A</b> правильно. If a language becomes less common, cultural knowledge may be harder to pass on.</span></div></div>
 
-              <div class="question" data-answer="a">
-                <p>4. What may happen if a language becomes less common?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq4" value="a"> A. Some cultural knowledge may be harder to pass on</label>
-                  <label class="option"><input type="radio" name="rq4" value="b"> B. Cultural memory becomes stronger automatically</label>
-                  <label class="option"><input type="radio" name="rq4" value="c"> C. Families stop needing language</label>
-                  <label class="option"><input type="radio" name="rq4" value="d"> D. Children learn culture more easily</label>
-                  <label class="option"><input type="radio" name="rq4" value="e"> E. International languages disappear</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Language less common болса, cultural knowledge next generation-ға жеткізу қиындайды.</span>
-                  <span data-lang="ru"><b>A</b> правильно. If a language becomes less common, cultural knowledge may be harder to pass on.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="d"><p>5. Which can help preserve language?</p><div class="options"><label class="option"><input type="radio" name="rq5" value="a"> A. Only foreign businesses</label><label class="option"><input type="radio" name="rq5" value="b"> B. Only political systems</label><label class="option"><input type="radio" name="rq5" value="c"> C. Only transport routes</label><label class="option"><input type="radio" name="rq5" value="d"> D. Schools, families and media</label><label class="option"><input type="radio" name="rq5" value="e"> E. Only global markets</label></div><div class="explanation"><span data-lang="kk"><b>D</b> дұрыс. Schools, families және media language preserve етуге көмектеседі.</span><span data-lang="ru"><b>D</b> правильно. Schools, families and media can help preserve language.</span></div></div>
 
-              <div class="question" data-answer="d">
-                <p>5. Which can help preserve language?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq5" value="a"> A. Only foreign businesses</label>
-                  <label class="option"><input type="radio" name="rq5" value="b"> B. Only political systems</label>
-                  <label class="option"><input type="radio" name="rq5" value="c"> C. Only transport routes</label>
-                  <label class="option"><input type="radio" name="rq5" value="d"> D. Schools, families and media</label>
-                  <label class="option"><input type="radio" name="rq5" value="e"> E. Only global markets</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>D</b> дұрыс. Schools, families және media language preserve етуге көмектеседі.</span>
-                  <span data-lang="ru"><b>D</b> правильно. Schools, families and media can help preserve language.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="b"><p>6. What can make a language feel alive and meaningful?</p><div class="options"><label class="option"><input type="radio" name="rq6" value="a"> A. Rejecting all songs and poems</label><label class="option"><input type="radio" name="rq6" value="b"> B. Traditional songs, poems, films and books</label><label class="option"><input type="radio" name="rq6" value="c"> C. Avoiding vocabulary practice</label><label class="option"><input type="radio" name="rq6" value="d"> D. Making language less common</label><label class="option"><input type="radio" name="rq6" value="e"> E. Removing language from schools</label></div><div class="explanation"><span data-lang="kk"><b>B</b> дұрыс. Traditional songs, poems, films and books language alive and meaningful етеді.</span><span data-lang="ru"><b>B</b> правильно. Traditional songs, poems, films and books can make a language feel alive and meaningful.</span></div></div>
 
-              <div class="question" data-answer="b">
-                <p>6. What can make a language feel alive and meaningful?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq6" value="a"> A. Rejecting all songs and poems</label>
-                  <label class="option"><input type="radio" name="rq6" value="b"> B. Traditional songs, poems, films and books</label>
-                  <label class="option"><input type="radio" name="rq6" value="c"> C. Avoiding vocabulary practice</label>
-                  <label class="option"><input type="radio" name="rq6" value="d"> D. Making language less common</label>
-                  <label class="option"><input type="radio" name="rq6" value="e"> E. Removing language from schools</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>B</b> дұрыс. Traditional songs, poems, films and books language alive and meaningful етеді.</span>
-                  <span data-lang="ru"><b>B</b> правильно. Traditional songs, poems, films and books can make a language feel alive and meaningful.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="c"><p>7. What is the challenge mentioned in the final paragraph?</p><div class="options"><label class="option"><input type="radio" name="rq7" value="a"> A. Rejecting all global languages</label><label class="option"><input type="radio" name="rq7" value="b"> B. Using only one language everywhere</label><label class="option"><input type="radio" name="rq7" value="c"> C. Learning global languages while respecting one’s own language</label><label class="option"><input type="radio" name="rq7" value="d"> D. Stopping study and work abroad</label><label class="option"><input type="radio" name="rq7" value="e"> E. Avoiding cultural roots</label></div><div class="explanation"><span data-lang="kk"><b>C</b> дұрыс. Challenge — global languages үйрену, бірақ own language-ты respect and use ету.</span><span data-lang="ru"><b>C</b> правильно. The challenge is learning global languages while respecting and using one’s own language.</span></div></div>
 
-              <div class="question" data-answer="c">
-                <p>7. What is the challenge mentioned in the final paragraph?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq7" value="a"> A. Rejecting all global languages</label>
-                  <label class="option"><input type="radio" name="rq7" value="b"> B. Using only one language everywhere</label>
-                  <label class="option"><input type="radio" name="rq7" value="c"> C. Learning global languages while respecting one’s own language</label>
-                  <label class="option"><input type="radio" name="rq7" value="d"> D. Stopping study and work abroad</label>
-                  <label class="option"><input type="radio" name="rq7" value="e"> E. Avoiding cultural roots</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>C</b> дұрыс. Challenge — global languages үйрену, бірақ own language-ты respect and use ету.</span>
-                  <span data-lang="ru"><b>C</b> правильно. The challenge is learning global languages while respecting and using one’s own language.</span>
-                </div>
-              </div>
+            <div class="question" data-answer="a"><p>8. Which title best matches the passage?</p><div class="options"><label class="option"><input type="radio" name="rq8" value="a"> A. Language and Cultural Identity</label><label class="option"><input type="radio" name="rq8" value="b"> B. Why Local Languages Should Disappear</label><label class="option"><input type="radio" name="rq8" value="c"> C. Global Trade and Business Growth</label><label class="option"><input type="radio" name="rq8" value="d"> D. Weather and Climate</label><label class="option"><input type="radio" name="rq8" value="e"> E. Political Systems and Cities</label></div><div class="explanation"><span data-lang="kk"><b>A</b> дұрыс. Best title language және cultural identity арасындағы байланысты толық қамтиды.</span><span data-lang="ru"><b>A</b> правильно. This title covers the main link between language and cultural identity.</span></div></div>
 
-              <div class="question" data-answer="a">
-                <p>8. Which title best matches the passage?</p>
-                <div class="options">
-                  <label class="option"><input type="radio" name="rq8" value="a"> A. Language and Cultural Identity</label>
-                  <label class="option"><input type="radio" name="rq8" value="b"> B. Why Local Languages Should Disappear</label>
-                  <label class="option"><input type="radio" name="rq8" value="c"> C. Global Trade and Business Growth</label>
-                  <label class="option"><input type="radio" name="rq8" value="d"> D. Weather and Climate</label>
-                  <label class="option"><input type="radio" name="rq8" value="e"> E. Political Systems and Cities</label>
-                </div>
-                <div class="explanation">
-                  <span data-lang="kk"><b>A</b> дұрыс. Best title language және cultural identity арасындағы байланысты толық қамтиды.</span>
-                  <span data-lang="ru"><b>A</b> правильно. This title covers the main link between language and cultural identity.</span>
-                </div>
-              </div>
-
-              <button class="check-btn" type="button" data-check="reading">
-                <span data-lang="kk">Reading жауаптарын тексеру</span>
-                <span data-lang="ru">Проверить Reading</span>
-              </button>
-              <div class="result-box" data-result="reading"></div>
-            </article>
+            <button class="check-btn" type="button" data-check="reading"><span data-lang="kk">Reading жауаптарын тексеру</span><span data-lang="ru">Проверить Reading</span></button>
+            <div class="result-box" data-result="reading"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FINAL RESULT -->
     <section class="section" id="final">
       <div class="shell">
         <div class="block">
           <div class="card">
-            <div class="kicker">
-              <span data-lang="kk">Жалпы нәтиже</span>
-              <span data-lang="ru">Общий результат</span>
-            </div>
-            <h2 class="section-title">
-              <span data-lang="kk">Mini Test Result</span>
-              <span data-lang="ru">Результат мини-теста</span>
-            </h2>
-            <p class="subtitle">
-              <span data-lang="kk">
-                Барлық бөлімді тексергеннен кейін жалпы нәтижеңізді көріңіз.
-              </span>
-              <span data-lang="ru">
-                После проверки всех частей посмотрите общий результат.
-              </span>
-            </p>
-
-            <button class="final-btn" type="button" onclick="showFinalResult()">
-              <span data-lang="kk">Жалпы нәтижені көрсету</span>
-              <span data-lang="ru">Показать общий результат</span>
-            </button>
-
+            <div class="kicker"><span data-lang="kk">Жалпы нәтиже</span><span data-lang="ru">Общий результат</span></div>
+            <h2 class="section-title">Mini Test Result</h2>
+            <p class="subtitle"><span data-lang="kk">Барлық бөлімді тексергеннен кейін жалпы нәтижеңізді көріңіз.</span><span data-lang="ru">После проверки всех частей посмотрите общий результат.</span></p>
+            <button class="final-btn" type="button" onclick="showFinalResult()"><span data-lang="kk">Жалпы нәтижені көрсету</span><span data-lang="ru">Показать общий результат</span></button>
             <div class="result-box" id="final-result"></div>
-
-            <div class="hidden-panel show">
-              <div class="text-box" style="margin-top:18px;">
-                <p data-lang="kk">
-                  Бұл — толық дайындық сайттарының тек кішкентай бөлігі. Толық нұсқада Listening,
-                  Reading және Grammar бойынша көбірек сұрақтар, толық юниттер, transcript, vocabulary
-                  және түсіндірмелер бар.
-                </p>
-                <p data-lang="ru">
-                  Это только маленькая часть полного подготовительного материала. В полной версии есть
-                  больше заданий по Listening, Reading и Grammar, полные юниты, transcript, vocabulary
-                  и объяснения.
-                </p>
-              </div>
+            <div class="text-box" style="margin-top:18px;">
+              <p data-lang="kk">Бұл — толық дайындық сайттарының тек кішкентай бөлігі. Толық нұсқада Listening, Reading және Grammar бойынша көбірек сұрақтар, толық юниттер, transcript, vocabulary және түсіндірмелер бар.</p>
+              <p data-lang="ru">Это только маленькая часть полного подготовительного материала. В полной версии есть больше заданий по Listening, Reading и Grammar, полные юниты, transcript, vocabulary и объяснения.</p>
             </div>
           </div>
         </div>
@@ -1098,136 +527,107 @@
       <div class="footer-card">
         <div class="kicker">© Назерке</div>
         <p>
-          <span data-lang="kk">
-            Барлық құқық қорғалған. Материалды рұқсатсыз көшіруге, сатуға, қайта таратуға немесе коммерциялық мақсатта қолдануға болмайды.
-          </span>
-          <span data-lang="ru">
-            Все права защищены. Запрещается копировать, продавать, распространять или использовать материал в коммерческих целях без разрешения.
-          </span>
+          <span data-lang="kk">Барлық құқық қорғалған. Материалды рұқсатсыз көшіруге, сатуға, қайта таратуға немесе коммерциялық мақсатта қолдануға болмайды.</span>
+          <span data-lang="ru">Все права защищены. Запрещается копировать, продавать, распространять или использовать материал в коммерческих целях без разрешения.</span>
         </p>
       </div>
     </div>
   </footer>
 
   <script>
-    const sectionMax = {
-      listening: 8,
-      grammar: 15,
-      reading: 8
-    };
-
-    const sectionScores = {
-      listening: null,
-      grammar: null,
-      reading: null
-    };
+    const sectionMax={listening:8,grammar:15,reading:8};
+    const sectionScores={listening:null,grammar:null,reading:null};
 
     function switchLanguage(lang){
       document.body.classList.remove("lang-kk","lang-ru");
-      document.body.classList.add("lang-" + lang);
-
-      document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-      document.querySelectorAll('[data-set-lang="' + lang + '"]').forEach(btn => btn.classList.add("active"));
-
-      try{ localStorage.setItem("freeMiniTestLang", lang); }catch(e){}
+      document.body.classList.add("lang-"+lang);
+      document.querySelectorAll(".lang-btn").forEach(btn=>btn.classList.remove("active"));
+      document.querySelectorAll('[data-set-lang="'+lang+'"]').forEach(btn=>btn.classList.add("active"));
+      try{localStorage.setItem("freeMiniTestLang",lang)}catch(e){}
     }
 
     function checkTest(testId){
-      const testBox = document.querySelector('[data-test="' + testId + '"]');
-      const resultBox = document.querySelector('[data-result="' + testId + '"]');
-      if(!testBox || !resultBox) return;
+      const testBox=document.querySelector('[data-test="'+testId+'"]');
+      const resultBox=document.querySelector('[data-result="'+testId+'"]');
+      if(!testBox||!resultBox)return;
+      const questions=testBox.querySelectorAll(".question");
+      let score=0;
 
-      const questions = testBox.querySelectorAll(".question");
-      let score = 0;
+      questions.forEach(q=>{
+        const correct=q.getAttribute("data-answer");
+        const selected=q.querySelector('input[type="radio"]:checked');
 
-      questions.forEach(question => {
-        const correctAnswer = question.getAttribute("data-answer");
-        const selected = question.querySelector('input[type="radio"]:checked');
-
-        question.querySelectorAll(".option").forEach(option => {
+        q.querySelectorAll(".option").forEach(option=>{
           option.classList.remove("correct","wrong");
-          const input = option.querySelector("input");
-          if(!input) return;
-
-          if(input.value === correctAnswer){
-            option.classList.add("correct");
-          }
-          if(selected && input.checked && input.value !== correctAnswer){
-            option.classList.add("wrong");
-          }
+          const input=option.querySelector("input");
+          if(!input)return;
+          if(input.value===correct)option.classList.add("correct");
+          if(selected&&input.checked&&input.value!==correct)option.classList.add("wrong");
         });
 
-        const exp = question.querySelector(".explanation");
-        if(exp) exp.classList.add("show");
-
-        if(selected && selected.value === correctAnswer){
-          score++;
-        }
+        const exp=q.querySelector(".explanation");
+        if(exp)exp.classList.add("show");
+        if(selected&&selected.value===correct)score++;
       });
 
-      sectionScores[testId] = score;
-
-      resultBox.innerHTML =
-        '<div class="score-line">' +
-          '<span data-lang="kk">Нәтиже: ' + score + ' / ' + questions.length + '</span>' +
-          '<span data-lang="ru">Результат: ' + score + ' / ' + questions.length + '</span>' +
-        '</div>';
+      sectionScores[testId]=score;
+      resultBox.innerHTML='<div class="score-line"><span data-lang="kk">Нәтиже: '+score+' / '+questions.length+'</span><span data-lang="ru">Результат: '+score+' / '+questions.length+'</span></div>';
       resultBox.classList.add("show");
 
-      const button = document.querySelector('[data-check="' + testId + '"]');
-      if(button && button.dataset.extra){
-        const panel = document.getElementById(button.dataset.extra);
-        if(panel) panel.classList.add("show");
-      }
-
-      const currentLang = document.body.classList.contains("lang-ru") ? "ru" : "kk";
+      const currentLang=document.body.classList.contains("lang-ru")?"ru":"kk";
       switchLanguage(currentLang);
-
-      resultBox.scrollIntoView({behavior:"smooth", block:"nearest"});
+      resultBox.scrollIntoView({behavior:"smooth",block:"nearest"});
     }
 
     function showFinalResult(){
-      const finalBox = document.getElementById("final-result");
-      const l = sectionScores.listening ?? 0;
-      const g = sectionScores.grammar ?? 0;
-      const r = sectionScores.reading ?? 0;
-      const total = l + g + r;
-      const max = sectionMax.listening + sectionMax.grammar + sectionMax.reading;
+      const finalBox=document.getElementById("final-result");
+      const l=sectionScores.listening??0;
+      const g=sectionScores.grammar??0;
+      const r=sectionScores.reading??0;
+      const total=l+g+r;
+      const max=31;
 
-      finalBox.innerHTML =
-        '<div class="final-grid">' +
-          '<div class="score-card"><b>' + l + '/8</b><span data-lang="kk">Listening</span><span data-lang="ru">Listening</span></div>' +
-          '<div class="score-card"><b>' + g + '/15</b><span data-lang="kk">Grammar</span><span data-lang="ru">Grammar</span></div>' +
-          '<div class="score-card"><b>' + r + '/8</b><span data-lang="kk">Reading</span><span data-lang="ru">Reading</span></div>' +
-          '<div class="score-card"><b>' + total + '/' + max + '</b><span data-lang="kk">Жалпы балл</span><span data-lang="ru">Общий балл</span></div>' +
-        '</div>' +
-        '<div class="text-box" style="margin-top:16px;">' +
-          '<p data-lang="kk"><b>Қорытынды:</b> Бұл мини-тест сізге Listening, Grammar және Reading бойынша бастапқы деңгейіңізді көруге көмектеседі. Толық дайындықта әр бөлім бойынша көбірек сұрақтар мен түсіндірмелер бар.</p>' +
-          '<p data-lang="ru"><b>Итог:</b> Этот мини-тест помогает увидеть ваш начальный уровень по Listening, Grammar и Reading. В полной подготовке больше вопросов и объяснений по каждому разделу.</p>' +
+      finalBox.innerHTML=
+        '<div class="final-grid">'+
+          '<div class="score-card"><b>'+l+'/8</b><span>Listening</span></div>'+
+          '<div class="score-card"><b>'+g+'/15</b><span>Grammar</span></div>'+
+          '<div class="score-card"><b>'+r+'/8</b><span>Reading</span></div>'+
+          '<div class="score-card"><b>'+total+'/'+max+'</b><span data-lang="kk">Жалпы балл</span><span data-lang="ru">Общий балл</span></div>'+
+        '</div>'+
+        '<div class="text-box" style="margin-top:16px;">'+
+          '<p data-lang="kk"><b>Қорытынды:</b> Бұл мини-тест Listening, Grammar және Reading бойынша бастапқы деңгейіңізді көруге көмектеседі. Толық дайындықта әр бөлім бойынша көбірек сұрақтар мен түсіндірмелер бар.</p>'+
+          '<p data-lang="ru"><b>Итог:</b> Этот мини-тест помогает увидеть ваш начальный уровень по Listening, Grammar и Reading. В полной подготовке больше вопросов и объяснений по каждому разделу.</p>'+
         '</div>';
 
       finalBox.classList.add("show");
-      const currentLang = document.body.classList.contains("lang-ru") ? "ru" : "kk";
+      const currentLang=document.body.classList.contains("lang-ru")?"ru":"kk";
       switchLanguage(currentLang);
-      finalBox.scrollIntoView({behavior:"smooth", block:"nearest"});
+      finalBox.scrollIntoView({behavior:"smooth",block:"nearest"});
     }
 
-    document.addEventListener("DOMContentLoaded", function(){
-      document.querySelectorAll("[data-set-lang]").forEach(button => {
-        button.addEventListener("click", function(){
-          switchLanguage(button.getAttribute("data-set-lang"));
+    document.addEventListener("DOMContentLoaded",function(){
+      document.querySelectorAll("[data-set-lang]").forEach(button=>{
+        button.addEventListener("click",function(){switchLanguage(button.getAttribute("data-set-lang"))});
+      });
+
+      document.querySelectorAll("[data-tab]").forEach(button=>{
+        button.addEventListener("click",function(){
+          const target=button.getAttribute("data-tab");
+          document.querySelectorAll(".tab-btn").forEach(btn=>btn.classList.remove("active"));
+          document.querySelectorAll(".tab-panel").forEach(panel=>panel.classList.remove("show"));
+          button.classList.add("active");
+          const panel=document.getElementById(target);
+          if(panel)panel.classList.add("show");
         });
       });
 
-      let savedLang = "kk";
-      try{ savedLang = localStorage.getItem("freeMiniTestLang") || "kk"; }catch(e){}
-      if(savedLang !== "kk" && savedLang !== "ru") savedLang = "kk";
+      let savedLang="kk";
+      try{savedLang=localStorage.getItem("freeMiniTestLang")||"kk"}catch(e){}
+      if(savedLang!=="kk"&&savedLang!=="ru")savedLang="kk";
       switchLanguage(savedLang);
 
-      document.querySelectorAll("[data-check]").forEach(button => {
-        button.addEventListener("click", function(){
-          checkTest(button.getAttribute("data-check"));
-        });
+      document.querySelectorAll("[data-check]").forEach(button=>{
+        button.addEventListener("click",function(){checkTest(button.getAttribute("data-check"))});
       });
     });
   </script>
